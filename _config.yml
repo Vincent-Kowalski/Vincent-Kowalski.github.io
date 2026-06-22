@@ -1,3 +1,10 @@
 theme: jekyll-theme-minimal
 title: Vincent Kowalski's homepage
-description: Bookmark this to keep an eye on my project updates!
+description: CFD doctorant - Supercritical flows - Heat transfers
+header_pages:
+  - about.md
+  - cv.md
+  - projects.md
+  - blog_articles.md
+  - publications.md
+  - contact.md
