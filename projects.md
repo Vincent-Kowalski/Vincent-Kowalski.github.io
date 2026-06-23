@@ -58,8 +58,7 @@ One of the "mini-project" was the parameter study of incidence angle on a wing p
 \
 IMAGE\
 \
-
-
+The objective was to determine numericaly the aerodynamic coefficients (lift and drag) based on the recorded pressure drop as a function of $\alpha$.
 
 
 
