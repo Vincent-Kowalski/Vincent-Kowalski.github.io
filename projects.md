@@ -8,6 +8,7 @@ title: Projects
 For my final-year project I chose to reinforce my CFD and data analysis skills. To do so, I collaborated with the company **Efectis France** which is in charge of carrying out fire and thermal sollicitations studies.<br/> 
 Fire engineers have noticed that some of the studies had similar results or at least, results showing a similar time-evolution curve. Indeed temperature profiles of storage warehouses are typically the kind of data one can consistently predict with Machine Learning (ML). It could save a lot of time asking a verified AI tool to predict the temperature evolution of those simple cases, saving work forces for the more specific ones. &nbsp; &nbsp; &nbsp;
 
+
 ![Parent Directory Image](/ICPE_incendie.png)
 
 ## Project overview
