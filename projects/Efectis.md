@@ -24,9 +24,23 @@ Finally the concatenated output data base was used to train different AI algorit
 
 ## Study cases
 
+Before launching the simulations and for the sake of accuracy/performance compromise of our tool, one has to know the influence of certain parameters on output data. This way, we can keep only the most important onse in our model since adding some input parameters drastically increases the amount of required training data. <br/>
+The parameters that present a high influence on the temperature (output data) must be treated :
+- either by taking them as input parameters
+- or by keeping them constant in the model, which would represent a limit of the predictive tool
+
+With respect to an "initial" case, we tested both geometrical and numerical parameters. <br/> 
+The results were compared according to the recommandation of the international ISO 16730-1 norm relative to the verification and validation of numerical models in fire safety. <br/>
+
+According to the results I kept the following input parameters associated with their variation ranges :
+
+
+
 
 
 ## Pre- postprocessing automation of the simulations
+FDS is a CFD software dedicated to fire scenario simulation. It takes all the simulation parameters from a text file (.fds extension).
+Seeing the variation range of th
 
 
 ## AI training, optimization and verification
