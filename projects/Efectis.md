@@ -35,7 +35,7 @@ The results were compared according to the calculations of the international ISO
 According to the results I kept the following input parameters associated with their variation ranges :
 
 | Variable | Range of variations | Step |
-|:--------|---------:|---------:|
+|:--------|:---------:|:---------:|
 | Surface area (m²) | [1000-1300] | 1500 |
 | Length/width ratio (-) | [1-2.1] | 0.1 |
 | Height (m) | [9-15] | 2 |
@@ -73,13 +73,20 @@ From this and according to the previously-developped paragraph, I applied 3 typi
 - Gaussian filter : curves usually show a very fractured graph and those high frequences oscillations would make the predictive model far less accurate. Gaussian filter acts as a low-pass filter to get rid of those oscillations
 - Curves extrapolation : certain sensor never get up to 900°C. Since we want to simulate the worst case fire scenario, we assume that everything in the
 
-Those 3 processes had to be automated since it should apply to all the 
+Those 3 processes had to be automated since it should apply to all the sensors of each simulation. With an approximate average of 40 sensors/simulatiuon,  this represented approximately $107 \times 20 = 2140$ curves.
 
 
-
- 
 
 ## MPI optimization
+Launching 107 LES simulations (SIZE OF SIMULATION DOMAINS) taking into account all sorts of heat tranfers is not feasible at the local scale in a reasonable amount of time. We had to deport the calculations on a University of Toulouse's cluster, using the Olympe supercalculator.
+The 
+
+
+
+
+
+
+
 
 
 ## AI training, optimization and verification
