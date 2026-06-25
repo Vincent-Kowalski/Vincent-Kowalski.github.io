@@ -36,18 +36,23 @@ According to the results I kept the following input parameters associated with t
 
 | Variable | Range of variations | Step |
 |:--------|---------:|---------:|
-| Surface (m²) | [1000-1300] | 1500 |
+| Surface area (m²) | [1000-1300] | 1500 |
 | Length/width ratio (-) | [1-2.1] | 0.1 |
 | Height (m) | [9-15] | 2 |
 | Cinetic | [fast ; super-fast] | - |
 | HRRPUA (kW/m²) | [250 ; 500] | - |
 
-
+If you're not familiar with the quantitative and qualitative parameters used in fire modelling, here is a quick recap of their meaning : <br/>
+- Cinetic : 
+- Heat Realease Rate Per Unit Area :
 
 
 ## Pre- postprocessing automation of the simulations
-FDS is a CFD software dedicated to fire scenario simulation. It takes all the simulation parameters from a text file (.fds extension).
-Seeing the variation range of th
+FDS is a CFD software dedicated to fire scenario simulation. It takes all the simulation parameters from a text file (.fds extension) known as the simulation file.
+Given the variation range of the input parameters, we intended a total of 107 simulations for a reasonable budget. Therefore it was obviously not fiseable to modify "by hand" an initial case to adapt to each case. <br/>
+ 
+
+## MPI optimization
 
 
 ## AI training, optimization and verification
