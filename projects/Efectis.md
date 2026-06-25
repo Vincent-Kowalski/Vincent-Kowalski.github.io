@@ -80,18 +80,37 @@ Those 3 processes had to be automated since it should apply to all the sensors o
 ## MPI optimization
 Launching 107 LES simulations (SIZE OF SIMULATION DOMAINS) taking into account all sorts of heat tranfers is not feasible at the local scale in a reasonable amount of time. We had to deport the calculations on a University of Toulouse's cluster, using the Olympe supercalculator. <br/>
 The classical compromise in MPI optimization is to choose the right amout of cores in which running the simulation case in parallel. In theory, running the simulation in 2, 3, 4 ... cores should divide the running time by 2, 3, 4 etc... That's not how it works since information has to be shared among the cores. The more cores we use, the more information has to be transfered and the efficiency per core decreases.
+<br/>
 [[ GRPAHIQUE DE LA PERTE D EFFICACITE PAR COEUR UTILISES ]]
-
-
-
-
-
-
+<br/>
+Although the efficiency goes down, we still run the calculations in parallel i.e. on multiple cores to shorten the run time. So I wrote a VBA-script that automatically divides the simulation domain in rectangular pieces. Those had to be as equal in size and close to a square as possible. <br/>
+[IMAGE D UN DE MES DECOUPAGE]
+<br/>
 
 
 
 
 ## AI training, optimization and verification
+Once the postprocessing was done and after concatenating the results into a data base, I could start traning predictive models with my data. <br/>
+Since the variable we're trying to predict is continuous (temperature), we're on a **supervised learning regression** problematic. The actual models (at least back in 2025) do so by meanns of a loss function by iteratively update their parameters. Those are going to change all the way through the learning unlike the so-called **hyperparameters** that one can see as the model "meta-" parameters. <br/>
+For the sake of completeness, let us mention that according to a case study, the predictive models are way more accurate at predicting the time of reach of certain temperature thresholds. <br/>
+Therefore the model output are the **TEMP** variables described with the scheme below : <br/>
+[IMAGE DES TEMP] <br/> 
+<br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
