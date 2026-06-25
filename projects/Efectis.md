@@ -47,9 +47,24 @@ If you're not familiar with the quantitative and qualitative parameters used in 
 - Heat Realease Rate Per Unit Area :
 
 
-## Pre- postprocessing automation of the simulations
+## Preprocessing automation of the simulations
 FDS is a CFD software dedicated to fire scenario simulation. It takes all the simulation parameters from a text file (.fds extension) known as the simulation file.
 Given the variation range of the input parameters, we intended a total of 107 simulations for a reasonable budget. Therefore it was obviously not fiseable to modify "by hand" an initial case to adapt to each case. <br/>
+ 
+ So I developped a comprehensive ready-to-use VBA Macro that produces the fds simulation script of any rectangular storage warehouse.
+ The user was able to customize the following parameters or keeping the by default values for the sake of simplicity :
+ 
+ ## Postprocessing of the simulations
+ 
+ As fire engineers, we rarely use the output simulation data as they show up. Combustion is a very wide theme in which a very wide range of 
+ physical phenomenon occur (smoke dynamics, heat conduction and convection, radiation, chemical processes ...). 
+ To deal with that at a reasonable numerical cost, some implicit assumptions about fire propagation, material behaviors etc. are made in the model itself. <br/>
+ <br/>
+ In this context, postprocessing appears to be an opportunity for the modeler to deal with the idealization of the fire process.<br/>
+To record the evolution of a variable (temperature, extinction coefficient ...) over time at one specific location in the simulation in FDS, 
+we use the so-called devices. One can think of it as a numerical sensor that can be put anywhere in the simulation domain by giving its 3 spatial coordinates.
+We then sprinkle devices as such 
+ 
  
 
 ## MPI optimization
