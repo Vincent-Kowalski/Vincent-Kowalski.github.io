@@ -63,8 +63,20 @@ Given the variation range of the input parameters, we intended a total of 107 si
  In this context, postprocessing appears to be an opportunity for the modeler to deal with the idealization of the fire process.<br/>
 To record the evolution of a variable (temperature, extinction coefficient ...) over time at one specific location in the simulation in FDS, 
 we use the so-called devices. One can think of it as a numerical sensor that can be put anywhere in the simulation domain by giving its 3 spatial coordinates.
-We then sprinkle devices as such 
- 
+We then sprinkle such devices through the domain to have a spatial distribution of the studied variable.
+Thanks to an Excel export, we then have access to all variable records in the entire warehouse. 
+<br/>
+IMAGE DE COURBE <br/>
+<br/>
+From this and according to the previously-developped paragraph, I applied 3 typically used in fire engineering data transformations :
+- Temperature limitation up to 900°C : this is systematically performed by fire engineers and comes from the fact that 900°C is way enough to make classicly used construction material collapse.
+- Gaussian filter : curves usually show a very fractured graph and those high frequences oscillations would make the predictive model far less accurate. Gaussian filter acts as a low-pass filter to get rid of those oscillations
+- Curves extrapolation : certain sensor never get up to 900°C. Since we want to simulate the worst case fire scenario, we assume that everything in the
+
+Those 3 processes had to be automated since it should apply to all the 
+
+
+
  
 
 ## MPI optimization
