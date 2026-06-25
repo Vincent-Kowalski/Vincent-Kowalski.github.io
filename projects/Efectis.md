@@ -86,7 +86,7 @@ The classical compromise in MPI optimization is to choose the right amout of cor
 Although the efficiency goes down, we still run the calculations in parallel i.e. on multiple cores to shorten the run time. So I wrote a VBA-script that automatically divides the simulation domain in rectangular pieces. Those had to be as equal in size and close to a square as possible. <br/>
 [IMAGE D UN DE MES DECOUPAGE] <br/>
 <br/>
-
+The Toulouse calculation cluster also offers the possiblity to run several simulations at a time, each of them being divided into subdomains. The different simulations are splitted among the cores and then reassemble at the end. It is an optimized solution to run several simulations that are quite similar.
 
 
 
@@ -113,13 +113,8 @@ After this study, I only trained neural networks that show better performances o
 
 
 This whole project would not have been of any interest if the predicted variables did not show a good agreement with engineers-produced data. <br/>
-Once the optimized neural network was finalized, studies concerning its relative, absolute error were carried out. 
-
-
-
-
-
-
+Once the optimized neural network was finalized, studies concerning its relative, absolute error were carried out. We also compared its results with real-case engineers studies.
+[IMAGE DES ERREURS RELATIVES]
 
 
 
