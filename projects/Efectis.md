@@ -84,7 +84,7 @@ The classical compromise in MPI optimization is to choose the right amout of cor
 [[ GRPAHIQUE DE LA PERTE D EFFICACITE PAR COEUR UTILISES ]]
 <br/>
 Although the efficiency goes down, we still run the calculations in parallel i.e. on multiple cores to shorten the run time. So I wrote a VBA-script that automatically divides the simulation domain in rectangular pieces. Those had to be as equal in size and close to a square as possible. <br/>
-[IMAGE D UN DE MES DECOUPAGE]
+[IMAGE D UN DE MES DECOUPAGE] <br/>
 <br/>
 
 
@@ -97,9 +97,23 @@ For the sake of completeness, let us mention that according to a case study, the
 Therefore the model output are the **TEMP** variables described with the scheme below : <br/>
 [IMAGE DES TEMP] <br/> 
 <br/>
+We then tested different algorithmes to predicts the TEMP variables, namely:
+- Random forest algorithm
+- XGBoost algorithme
+- Neural networks
+
+[IMAGE DES PERFORMANCES DES MODELES RUDIMENTAIRES] <br/>
+<br/>
+Definition of the MAPE? <br/>
+<br/>
+After this study, I only trained neural networks that show better performances on my data set. The optimization phase could begin, simply by iteratively modify the **hyperparameters** of the model like :
+- number of
+- portions of the data base used for traning, test and validation
+- [[others]]
 
 
-
+This whole project would not have been of any interest if the predicted variables did not show a good agreement with engineers-produced data. <br/>
+Once the optimized neural network was finalized, studies concerning its relative, absolute error were carried out. 
 
 
 
