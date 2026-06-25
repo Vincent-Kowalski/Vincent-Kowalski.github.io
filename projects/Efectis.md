@@ -73,13 +73,15 @@ From this and according to the previously-developped paragraph, I applied 3 typi
 - Gaussian filter : curves usually show a very fractured graph and those high frequences oscillations would make the predictive model far less accurate. Gaussian filter acts as a low-pass filter to get rid of those oscillations
 - Curves extrapolation : certain sensor never get up to 900°C. Since we want to simulate the worst case fire scenario, we assume that everything in the
 
-Those 3 processes had to be automated since it should apply to all the sensors of each simulation. With an approximate average of 40 sensors/simulatiuon,  this represented approximately $107 \times 20 = 2140$ curves.
+Those 3 processes had to be automated since it should apply to all the sensors of each simulation. With an approximate average of 40 sensors/simulatiuon,  this represented approximately $107 \times 40 = 4280$ curves.
 
 
 
 ## MPI optimization
-Launching 107 LES simulations (SIZE OF SIMULATION DOMAINS) taking into account all sorts of heat tranfers is not feasible at the local scale in a reasonable amount of time. We had to deport the calculations on a University of Toulouse's cluster, using the Olympe supercalculator.
-The 
+Launching 107 LES simulations (SIZE OF SIMULATION DOMAINS) taking into account all sorts of heat tranfers is not feasible at the local scale in a reasonable amount of time. We had to deport the calculations on a University of Toulouse's cluster, using the Olympe supercalculator. <br/>
+The classical compromise in MPI optimization is to choose the right amout of cores in which running the simulation case in parallel. In theory, running the simulation in 2, 3, 4 ... cores should divide the running time by 2, 3, 4 etc... That's not how it works since information has to be shared among the cores. The more cores we use, the more information has to be transfered and the efficiency per core decreases.
+[[ GRPAHIQUE DE LA PERTE D EFFICACITE PAR COEUR UTILISES ]]
+
 
 
 
