@@ -17,7 +17,7 @@ One of the "mini-project" was the parameter study of incidence angle on a wing p
 ![Parent Directory Image](/Images/plane_scheme.png)
 \
 The objective was to determine numericaly the aerodynamic coefficients (lift and drag) based on the recorded pressure drop as a function of $\alpha$. We then end up
-with the polar curve representing the variation of $C_l$ with resepct to $C_d$. The incidence angle varies implicitly. &nbsp; &nbsp; &nbsp;
+with the polar curve representing the variation of $C_l$ with resepct to $C_d$. The incidence angle varies implicitly along the grpah. &nbsp; &nbsp; &nbsp;
 \
 ![Parent Directory Image](/Images/Cl_Cd.png)
 \
@@ -37,10 +37,14 @@ is a prerequisite for determining the performances of the aircraft.
 ## Quick overview of NACA profiles
 
 ## Solver choice
-In OpenFOAM, several solvers are available. It is a algorithm that solve the coupling between pressure and velovicity in the Navier-Stokes system equations.
-The choice of the solver is determining, one won't end up with the same results with different solvers. It always depends on the configuration.
+In OpenFOAM, several solvers are available. It is an algorithm that solve the coupling between pressure and velocity in the Navier-Stokes system equations.
+The choice of the solver is determining: one won't end up with the same results with different solvers. Its choice always depends on the configuration.
 The important thing to note in our configuration is that, eventually, we are going to reach a fully turbulent stationnary state with air flowing smoothly around the profile.
 In other words the variation in the velocity and pressure profiles from one time step to another is going to be neglectable.
+In these situations one typcally uses a steady state solver. The main advantage is that the modeller doesn't have to tell the software when to stop ("How much time steps should
+the simulation last?") but when field variations are assumed to be neglictable ("Is a $10^{-4}$, $10^{-6} ... relative variation a sign that steady state is reached?). <br/>
+For steady problems, it is usually easier to think this way. One can also spot a non converging simulation more effectively instead of always trying to run it 
+with a higher number of time steps. 
 
 ## Fluid characteristics determination
 In CFD, one typically uses undimensioned numbers to describe fluid characteristics. It allows scientists all around the world to test the configuration by taking
