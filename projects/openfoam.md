@@ -17,7 +17,7 @@ One of the "mini-project" was the parameter study of incidence angle on a wing p
 ![Parent Directory Image](/Images/plane_scheme.png)
 \
 The objective was to determine numericaly the aerodynamic coefficients (lift and drag) based on the recorded pressure drop as a function of $\alpha$. We then end up
-with the polar curve representing the variation of $C_l$ with resepct to $C_d$. The incidence angle varies implicitly.
+with the polar curve representing the variation of $C_l$ with resepct to $C_d$. The incidence angle varies implicitly. &nbsp; &nbsp; &nbsp;
 \
 ![Parent Directory Image](/Images/Cl_Cd.png)
 \
