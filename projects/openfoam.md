@@ -39,30 +39,37 @@ is a prerequisite for determining the performances of the aircraft.
 
 ## Solver choice
 In OpenFOAM, several solvers are available. It is an algorithm that solve the coupling between pressure and velocity in the Navier-Stokes system equations.
-The choice of the solver is determining: one won't end up with the same results with different solvers. Its choice always depends on the configuration.
-The important thing to note in our configuration is that, eventually, we are going to reach a fully turbulent stationnary state with air flowing smoothly around the profile.
-In other words the variation in the velocity and pressure profiles from one time step to another is going to be neglectable.
-In these situations one typcally uses a steady state solver. The main advantage is that the modeller doesn't have to tell the software when to stop ("How much time steps should
+The choice of the solver is determining: one won't end up with the same results with different solvers. Its choice always depends on the configuration. <br/>
+An important feature of our configuration is that, eventually, the fluid is going to reach a fully turbulent stationnary state with air flowing smoothly around the profile.
+In other words the variation in the velocity and pressure profiles from one time step to another is going to be neglectable at some point. <br/>
+In these situations one typcally uses a steady-state solver. The main advantage is that the modeller doesn't have to tell the software when to stop ("How much time steps should
 the simulation last?") but when field variations are assumed to be neglictable ("Is a $10^{-4}$, $10^{-6}$ ... relative variation the sign that steady state is reached?"). <br/>
 One can also spot a non-converging simulation more effectively instead of desperatly trying to run it with a higher number of time steps. <br/> 
 In an incompressible case like this one, we can use the well-known simpleFOAM solver.
 
 ## Fluid characteristics determination
-In CFD, one typically uses undimensioned numbers to describe fluid characteristics. It allows scientists all around the world to test the configuration by taking
+In CFD one typically uses undimensioned numbers to describe fluid characteristics. It allows scientists all around the world to test the configuration by taking
 the same undimensioned numbers, regardless of the experiment or simulation scale. <br/>
 This is why we only describe the fluid by the Reynolds number of the simulation. <br/>
 $$Re_c = \frac{\rho.U_{inf}.c}{\nu}$$
 with :
-- \rho : the volumetric mass of the fluid (kg/m^3)
+- \rho : the volumetric mass of the fluid (kg/$m^3$)
 - \mu : the dynamic viscosity of of the fluid (kg/m/s)
 - c : the chord of the wing profile (m)
 - U_{inf} : the velocity of the incident flow (m/s)
+Although we know the values $\rho_{air}$, $\mu_{air}, etc. it doesn't matter since others can reproduce my simulation with the same Reynolds number. <br/>
+The chosen $Re$ has to be coherent with the physical parameters of air and high enough to allow a fully turbulent flow. $Re = 10^6$ meets those conditions.
 
 ## Turbulence model definition
+In a RANS simulation, turbulence isn't resolved at any scale: it is modeled. This means we are looking at the averaged Navier Stokes equations, closing the problem using
+another set of 2 equations and a priori knowledge about turbulence. The 2 conservation equations can be applied to k (turbulent kinetic energy) and $\epsilon$ (the turbulent
+dissipation) or to k and $\omega$ (specific dissipation). In a nutshell the $k-\omage-SST$ turbulence model combines the strengths of the above-mentionned 
+two-equations models and is widely use. <br/>
+More information on the $k-\omage-SST$ model can be found here.
 
 ## Initial and boundary conditions
 
-## Postprocessing of the simulation
+## Postprocessing the simulation
 
 ## Parameter study automation
 I detailled above the preprocessing and postprocessing for 1 specific simulation. Now, we need to automatically adapt this process to the 19 other simulations.
