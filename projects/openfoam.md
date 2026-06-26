@@ -28,7 +28,7 @@ The aerodynamical forces acting on the wing profile are the lift force (directed
 Note that the paradigm of inclining the wing profile of $\alpha$ radiant is exactly the same situation as keeping the wing horizontal and inclining the incident airflow.
 Lift and drag forces can be expressed as : <br/>
 $$F_l = \frac{\rho}{2} u_{\inf}^2.S_{ref}.C_l$$ <br/>
- &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
 $$F_d = \frac{\rho}{2} u_{\inf}^2.S_{ref}.C_d$$
 
 As one can see, their are very similar. Only the aerodynamical coefficients differentiate them. This is why the knowledge of the above menionned polar curve
@@ -45,11 +45,19 @@ In other words the variation in the velocity and pressure profiles from one time
 In these situations one typcally uses a steady state solver. The main advantage is that the modeller doesn't have to tell the software when to stop ("How much time steps should
 the simulation last?") but when field variations are assumed to be neglictable ("Is a $10^{-4}$, $10^{-6} ... relative variation a sign that steady state is reached?). <br/>
 For steady problems, it is usually easier to think this way. One can also spot a non converging simulation more effectively instead of always trying to run it 
-with a higher number of time steps. 
+with a higher number of time steps. <br/> 
+In an incompressible case like this one, we can use the well-known simpleFOAM solver.
 
 ## Fluid characteristics determination
 In CFD, one typically uses undimensioned numbers to describe fluid characteristics. It allows scientists all around the world to test the configuration by taking
-the same undimensioned numbers, regardless of the experiment or simulation scale.
+the same undimensioned numbers, regardless of the experiment or simulation scale. <br/>
+This is why we only describe the fluid by the Reynolds number of the simulation. <br/>
+$$Re_c = \frac{\rho.U_{inf}.c}{\nu}$$
+with :
+- \rho : the volumetric mass of the fluid (kg/m^3)
+- \mu : the dynamic viscosity of of the fluid (kg/m/s)
+- c : the chord of the wing profile (m)
+- U_{inf} : the velocity of the incident flow (m/s)
 
 ## Turbulence model definition
 
@@ -68,7 +76,7 @@ The good news is that nothing really changes in the pre- and postprocessing proc
 	# Postprocessing automation
 	
 	
-# Results
+## Results
 
 
 
