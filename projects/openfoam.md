@@ -81,12 +81,8 @@ For the inlet and outlet, we can set a so-called "free stream" condition for bot
 at a constant $U_{inf}$ velocity. <br/>
 For the profile surface, we use classical boundary conditions for wall-bounded flows. By definiton, velocity has to present a no-slip condition on a solid surface,
 i.e. should equal 0. It is obviously not the case of pressure which cannot fall to 0 at the boundary. Instead, a zero-gradient condition ... the continuity of pressure.
-Remark: in a RANS turbulence model we must give boundary conditions for the turbulent variables (k,
-
-
-
-
-Additionnaly we also need to give these information about the turbulent variables model: 
+Remark: in a RANS turbulence model we must give boundary conditions for the turbulent variables ($k$, $\omega$, $\nu_T$). <br/>
+More information about RANS modelling and the turbulent variables can be found here.
 
 ## Postprocessing the simulation
 
