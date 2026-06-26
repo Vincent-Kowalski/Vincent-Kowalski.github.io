@@ -17,7 +17,7 @@ One of the "mini-project" was the parameter study of incidence angle on a wing p
 ![Parent Directory Image](/Images/plane_scheme.png)
 \
 The objective was to determine numericaly the aerodynamic coefficients (lift and drag) based on the recorded pressure drop as a function of $\alpha$. We then end up
-with the polar curve representing the variation of $C_l$ with resepct to $C_d$. The incidence angle varies implicitly along the grpah. &nbsp; &nbsp; &nbsp;
+with the polar curve representing the variation of $C_l$ with resepct to $C_d$. The incidence angle varies implicitly along the grpah. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 \
 ![Parent Directory Image](/Images/Cl_Cd.png)
 \
@@ -28,6 +28,7 @@ The aerodynamical forces acting on the wing profile are the lift force (directed
 Note that the paradigm of inclining the wing profile of $\alpha$ radiant is exactly the same situation as keeping the wing horizontal and inclining the incident airflow.
 Lift and drag forces can be expressed as : <br/>
 $$F_l = \frac{\rho}{2} u_{\inf}^2.S_{ref}.C_l$$ <br/>
+ &nbsp; &nbsp; &nbsp;
 $$F_d = \frac{\rho}{2} u_{\inf}^2.S_{ref}.C_d$$
 
 As one can see, their are very similar. Only the aerodynamical coefficients differentiate them. This is why the knowledge of the above menionned polar curve
