@@ -27,8 +27,8 @@ The flow is incompressible since
 The aerodynamical forces acting on the wing profile are the lift force (directed perpendicular to the incident aorflow) and the drag force (directed in the incident airflow direction).
 Note that the paradigm of inclining the wing profile of $\alpha$ radiant is exactly the same situation as keeping the wing horizontal and inclining the incident airflow.
 Lift and drag forces can be expressed as : 
-$$F_l = \frac{\roh}{2} u_{\inf}^2.S_{ref}.C_l$$
-$$F_d = \frac{\roh}{2} u_{\inf}^2.S_{ref}.C_d$$
+$$F_l = \frac{\rho}{2} u_{\inf}^2.S_{ref}.C_l$$
+$$F_d = \frac{\rho}{2} u_{\inf}^2.S_{ref}.C_d$$
 
 As one can see, their are very similar. Only the aerodynamical coefficients differentiate them. This is why the knowledge of the above menionned polar curve
 is a prerequisite for determining the performances of the aircraft.
