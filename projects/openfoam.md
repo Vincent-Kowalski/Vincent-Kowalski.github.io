@@ -65,6 +65,7 @@ In a RANS simulation, turbulence isn't resolved at any scale: it is modeled. Thi
 another set of 2 equations and a priori knowledge about turbulence. The 2 conservation equations can be applied to k (turbulent kinetic energy) and $\epsilon$ (the turbulent
 dissipation) or to k and $\omega$ (specific dissipation). In a nutshell the $k-\omega-SST$ turbulence model combines the strengths of the above-mentionned 
 two-equations models and is widely use. <br/>
+<br/>
 More information on the $k-\omega-SST$ model can be found [here](https://www.cfd-online.com/Wiki/SST_k-omega_model) <br/>.
 
 ## Initial and boundary conditions
