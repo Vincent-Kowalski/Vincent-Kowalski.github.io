@@ -21,7 +21,7 @@ with the polar curve representing the variation of $C_l$ with resepct to $C_d$. 
 \
 ![Parent Directory Image](/Images/Cl_Cd.png)
 \
-The flow is incompressible since 
+The flow is considered to be incompressible since we are interested in the regions of the flow that are relatively close the wing edge.
 
 ## Theoretical background
 The aerodynamical forces acting on the wing profile are the lift force (directed perpendicular to the incident aorflow) and the drag force (directed in the incident airflow direction).
@@ -56,7 +56,8 @@ with :
 - \rho : the volumetric mass of the fluid (kg/$m^3$)
 - \mu : the dynamic viscosity of of the fluid (kg/m/s)
 - c : the chord of the wing profile (m)
-- U_{inf} : the velocity of the incident flow (m/s)
+- U_{inf} : the velocity of the incident flow (m/s) <br/>
+<br/>
 Although we know the values $\rho_{air}$, $\mu_{air}, etc. it doesn't matter since others can reproduce my simulation with the same Reynolds number. <br/>
 The chosen $Re$ has to be coherent with the physical parameters of air and high enough to allow a fully turbulent flow. $Re = 10^6$ meets those conditions.
 
@@ -69,6 +70,23 @@ two-equations models and is widely use. <br/>
 More information on the $k-\omega-SST$ model can be found [here](https://www.cfd-online.com/Wiki/SST_k-omega_model) <br/>.
 
 ## Initial and boundary conditions
+To reduce the resolution of each time step to a algebraic system of equations, one necessarly needs the following values of the researched fields (v and p):
+- on the entire domain at the first time step
+- on the edge of the domain at any time step <br/>
+These are repectively called initial and boundary conditions. <br/>
+At time 0, the pressure and velocity fields can be taken as homogeneous in the whole domain. In particular, the chosen values shouldn't be too far from the calculated ones, otherwise
+it's going to be harder (or even impossible) to converge to the solution. <br/>
+For the boundaries, one has to adapt the conditions depending on the edge. Note that the wing profile is a solid boundary and has to be considered as a domain edge. <br/>
+For the inlet and outlet, we can set a so-called "free stream" condition for both pressure and temperature. It is especially appropriate ti the fluid flowing in and out
+at a constant $U_{inf}$ velocity. <br/>
+For the profile surface, we use classical boundary conditions for wall-bounded flows. By definiton, velocity has to present a no-slip condition on a solid surface,
+i.e. should equal 0. It is obviously not the case of pressure which cannot fall to 0 at the boundary. Instead, a zero-gradient condition ... the continuity of pressure.
+Remark: in a RANS turbulence model we must give boundary conditions for the turbulent variables (k,
+
+
+
+
+Additionnaly we also need to give these information about the turbulent variables model: 
 
 ## Postprocessing the simulation
 
