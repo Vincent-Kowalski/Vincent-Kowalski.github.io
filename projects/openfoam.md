@@ -63,9 +63,9 @@ The chosen $Re$ has to be coherent with the physical parameters of air and high 
 ## Turbulence model definition
 In a RANS simulation, turbulence isn't resolved at any scale: it is modeled. This means we are looking at the averaged Navier Stokes equations, closing the problem using
 another set of 2 equations and a priori knowledge about turbulence. The 2 conservation equations can be applied to k (turbulent kinetic energy) and $\epsilon$ (the turbulent
-dissipation) or to k and $\omega$ (specific dissipation). In a nutshell the $k-\omage-SST$ turbulence model combines the strengths of the above-mentionned 
+dissipation) or to k and $\omega$ (specific dissipation). In a nutshell the $k-\omega-SST$ turbulence model combines the strengths of the above-mentionned 
 two-equations models and is widely use. <br/>
-More information on the $k-\omage-SST$ model can be found [here](https://www.cfd-online.com/Wiki/SST_k-omega_model) <br/>.
+More information on the $k-\omega-SST$ model can be found [here](https://www.cfd-online.com/Wiki/SST_k-omega_model) <br/>.
 
 ## Initial and boundary conditions
 
