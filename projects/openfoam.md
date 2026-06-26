@@ -43,9 +43,8 @@ The choice of the solver is determining: one won't end up with the same results 
 The important thing to note in our configuration is that, eventually, we are going to reach a fully turbulent stationnary state with air flowing smoothly around the profile.
 In other words the variation in the velocity and pressure profiles from one time step to another is going to be neglectable.
 In these situations one typcally uses a steady state solver. The main advantage is that the modeller doesn't have to tell the software when to stop ("How much time steps should
-the simulation last?") but when field variations are assumed to be neglictable ("Is a $10^{-4}$, $10^{-6} ... relative variation a sign that steady state is reached?). <br/>
-For steady problems, it is usually easier to think this way. One can also spot a non converging simulation more effectively instead of always trying to run it 
-with a higher number of time steps. <br/> 
+the simulation last?") but when field variations are assumed to be neglictable ("Is a $10^{-4}$, $10^{-6}$ ... relative variation the sign that steady state is reached?"). <br/>
+One can also spot a non-converging simulation more effectively instead of desperatly trying to run it with a higher number of time steps. <br/> 
 In an incompressible case like this one, we can use the well-known simpleFOAM solver.
 
 ## Fluid characteristics determination
