@@ -16,8 +16,26 @@ we wanted. <br/>
 The particularity of our project is that we decided to run simulations on both Fluent and OpenFOAM to validate the results twice.
 
 ## Project overview
-Trapezoidal pipes are often used in HVAC facilities, notably to use them as vent ducts.
+Trapezoidal pipes are often used in HVAC facilities, notably to use them as vent ducts. Heat transfers happening within them has to be studied, especially
+forced convection.
+In their numerical study, Rokni and Sunden found that the correlation between the 3 determining undimensionned numbers in this configuration:
+$$Nu=0.03Re^{0.8}Pr^{0.3}$$ <br/>
+futuring the following numbers: <br/>
 
-(voir compte-rendu)
+| Number | Name | Formula | Representation |
+|:--------|:---------:|:---------:|:---------:|
+| Re | Reynolds number | $\frac{\rho.U.D}{\mu}$ | the ratio of inertial to viscosity forces|
+| Nu | Nusselt number | $\frac{h.D}{\lambda}$ | the ratio of convection to conduction|
+| Pr | Prandtl number | $\frac{C_p \mu}{\lambda} | the ratio of momentum diffusivity to thermal diffusivity| <br/>
+Among them only $Pr$ is constant in our study since it only takes thermophysical properties of the fluids as parameters. <br/>
+<br/>
+To find this correlation again, we set up and automated a simulations campaign featuring different $Nu$ and $Re$.
+We then perform a logarithmic regression to find the coefficients of the study.<br/>
+<br/>
+To sum up, our numerical investigation as two main goals:
+- Finding the establishment length
+- Find the Rokni and Sunden's correlation back
+
+
 
 
