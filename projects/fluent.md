@@ -26,7 +26,8 @@ futuring the following numbers: <br/>
 |:--------|:---------:|:---------:|:---------:|
 | Re | Reynolds number | $\frac{\rho.U.D}{\mu}$ | the ratio of inertial to viscosity forces|
 | Nu | Nusselt number | $\frac{h.D}{\lambda}$ | the ratio of convection to conduction|
-| Pr | Prandtl number | $\frac{C_p \mu}{\lambda} | the ratio of momentum diffusivity to thermal diffusivity| <br/>
+| Pr | Prandtl number | $\frac{C_p \mu}{\lambda}$ | the ratio of momentum diffusivity to thermal diffusivity| <br/>|
+
 Among them only $Pr$ is constant in our study since it only takes thermophysical properties of the fluids as parameters. <br/>
 <br/>
 To find this correlation again, we set up and automated a simulations campaign featuring different $Nu$ and $Re$.
