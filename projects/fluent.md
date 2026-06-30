@@ -75,18 +75,37 @@ $\frac{\partial U_x}{\partial x} =0$. This is a type of Neumann condition. We al
 <br>
 These are pretty basic but considering our simple geometry, a more fancy one is going to significantly reduce the numerical cost of the simultion.
 
-	# A numerical trick
-	The pipe admits a vertial axis of symmetry. Because of that, we can simply simulate half of our domain and set a ** symmetry boundary condition ** at the middle 
-	of the pipe. This way, the software knows that velocity, pressure and temperature profiles have to be mirrored along that surface. <br/>
-	Ultimatly, it only sets the fluxes across the symmetry surface and the normal components of the variables to zero. The domain can basically be halved.
-	
-	https://www.simscale.com/docs/simulation-setup/boundary-conditions/symmetry/
+# A numerical trick
+
+The pipe admits a vertial axis of symmetry. Because of that, we can simply simulate half of our domain and set a ** symmetry boundary condition ** at the middle 
+of the pipe. This way, the software knows that velocity, pressure and temperature profiles have to be mirrored along that surface. <br/>
+Ultimatly, it only sets the fluxes across the symmetry surface and the normal components of the variables to zero. The domain can basically be halved.
+
+https://www.simscale.com/docs/simulation-setup/boundary-conditions/symmetry/
 
 
 ## Results
-With both softwares we obtained usable results to be compared with theoretical values. <br/>
-First, we were seeking the establishment length of the flow. Indeed the time-averaged velocity eventually converges to a well-defined velocity profile. 
+We obtained usable results to be compared with theoretical values with both softwares. <br/>
+First, we were seeking for the establishment length of the flow. Indeed the time-averaged velocity eventually converges to a well-defined velocity profile. 
 The flow is then called ** fully-developped **. <br/>
+As one can observe on the graphs, the velocity profile stop evolving after approximately 10 meters. After this distance the fluid can then be considered
+as full-developped so the establisment length in this configuration is 10 meters. <br>
+Note that this value 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
