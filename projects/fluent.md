@@ -89,9 +89,13 @@ We obtained usable results to be compared with theoretical values with both soft
 First, we were seeking for the establishment length of the flow. Indeed the time-averaged velocity eventually converges to a well-defined velocity profile. 
 The flow is then called ** fully-developped **. <br/>
 As one can observe on the graphs, the velocity profile stop evolving after approximately 10 meters. After this distance the fluid can then be considered
-as full-developped so the establisment length in this configuration is 10 meters. <br>
-Note that this value 
-
+as full-developped so the establisment length in this configuration is 10 meters. It is in good agreement with the empirical formula (ADD SOURCE)
+Note that this value depends on the hydraulic diameter and thus the dimensions of the trapezoidal pipe. <br/>
+<br/>
+Moreover we had to demonstrate the correlation found by Rokni and Sunden $$Nu=0.03Re^{0.8}Pr^{0.3}$$. To do so we automated a simulations campaign where
+both $Re$ and $Nu$ were different. The Reynolds number can be computed in the preprocessing step since its only changing variable is $U$, the inlet
+velocity which is a parameter of the simulation. However Nusselt has to be determined numerically based on the simulation results and that was the
+whole part od the postprocessing step. 
 
 
 
