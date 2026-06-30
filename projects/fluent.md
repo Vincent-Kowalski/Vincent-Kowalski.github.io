@@ -94,8 +94,17 @@ Note that this value depends on the hydraulic diameter and thus the dimensions o
 <br/>
 Moreover we had to demonstrate the correlation found by Rokni and Sunden $$Nu=0.03Re^{0.8}Pr^{0.3}$$. To do so we automated a simulations campaign where
 both $Re$ and $Nu$ were different. The Reynolds number can be computed in the preprocessing step since its only changing variable is $U$, the inlet
-velocity which is a parameter of the simulation. However Nusselt has to be determined numerically based on the simulation results and that was the
-whole part od the postprocessing step. 
+velocity which is a parameter of the simulation. However Nusselt number has to be determined numerically based on the simulation results and that was the
+whole part of the postprocessing step. <br/>
+** In Ansys Fluent ** $Nu$ is calculated automatically. We just have to pick it up from the summary Report of the simulations. <br/>
+** In OpenFOAM ** there is not such a feature and we have to compute it "by hand" from the so-called bulk temperature of the flow. 
+Calculations won't be detailled here. <br/>
+By running only 8 simualtions and associating $Re$ and $Nu$ for each of them we could plot $ln(Nu)$ with respect to $ln(Re)$ and perform a linear 
+regression. <br/>
+<br/>
+Firstly the linear correlation is quit valid since $R^2=0.95$. Secondly the linear coefficients allow us to write: <br/>
+$$ ln(Nu)$ = 0.7663.ln(Re) - 1.0861 $$ 
+$$ \Leftrightarrow 
 
 
 
