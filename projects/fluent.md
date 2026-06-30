@@ -55,8 +55,40 @@ More information on the $k-\omega-SST$ model can be found [here](https://www.cfd
 
 ## Numerical mesh
 
-A structured mesh has been chosen for this relatively simple geometry. A ... attention has been ... for the near-eadges zones. There, both velocity and temperature gradients
-are higher and the zones habe to be resolved finner.
+A structured mesh has been chosen for this relatively simple geometry. Special attention was paid to the near-wall regions where both velocity and temperature gradients
+are high. If the first cell of the mesh is too large, complex phenomena won't be resolved leading to inacurate predictions. However a too thin first cell would lead 
+to very expensive numerical ressources. Again, the whole point is to make a compromise between accuracy and performance. <br/>
+Knowing the flow parameters and the desired refinement one can compute the length of the first cell using the friction velocity and the shear stress at the wall. The 
+calculations won't be detailled here but the interested reader can throw an eye to this [very well done calculator](https://github.com/monikamadasamy/CFD-yplus-Near-Wall-Mesh-Calculator) 
+which explains near-wall turbulence basics. <br/>
+<br/>
+Afterwards we took $y+=30$ and then a first cell length of $4.5e-5 m$. We then used the so-called Wall functions in both Fluent and OpenFOAM to inflate the mesh properly at the 
+edges of the domain.
+
+## Boundary conditions
+Boundary conditions are mathematical conditions that the velocity, pressure and temperature fields have to meet at the edges of the domain for any time step. They originate
+from physical arguments that can be turned into an equation valid anywhen. <br/>
+For exemple, considering an internal flow like this one, the velocity has to be equal to zero at the wall. It is called the no-slip condition and it is a sepcial
+form of Dirichlet condition. We also use them for temperature as we set a fixed value for the temperatures at top and bottom of the pipe. <br/>
+At the in- and outlet, we want a straight velocity profile flowing into the pipe. To ensure that, we set the velocity gradient at zeroat the beginning and end of it : 
+$\frac{\partial U_x}{\partial x} =0$. This is a type of Neumann condition. We also use them for pressure. <br/>
+<br>
+These are pretty basic but considering our simple geometry, a more fancy one is going to significantly reduce the numerical cost of the simultion.
+
+	# A numerical trick
+	The pipe admits a vertial axis of symmetry. Because of that, we can simply simulate half of our domain and set a ** symmetry boundary condition ** at the middle 
+	of the pipe. This way, the software knows that velocity, pressure and temperature profiles have to be mirrored along that surface. <br/>
+	Ultimatly, it only sets the fluxes across the symmetry surface and the normal components of the variables to zero. The domain can basically be halved.
+	
+	https://www.simscale.com/docs/simulation-setup/boundary-conditions/symmetry/
+
+
+## Results
+With both softwares we obtained usable results to be compared with theoretical values. <br/>
+First, we were seeking the establishment length of the flow. Indeed the time-averaged velocity eventually converges to a well-defined velocity profile. 
+The flow is then called ** fully-developped **. <br/>
+
+
 
 
 
