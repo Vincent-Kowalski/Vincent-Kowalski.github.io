@@ -75,7 +75,7 @@ $\frac{\partial U_x}{\partial x} =0$. This is a type of Neumann condition. We al
 <br>
 These are pretty basic but considering our simple geometry, a more fancy one is going to significantly reduce the numerical cost of the simultion.
 
-# A numerical trick
+### A numerical trick
 
 The pipe admits a vertial axis of symmetry. Because of that, we can simply simulate half of our domain and set a ** symmetry boundary condition ** at the middle 
 of the pipe. This way, the software knows that velocity, pressure and temperature profiles have to be mirrored along that surface. <br/>
