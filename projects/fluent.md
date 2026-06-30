@@ -102,9 +102,18 @@ Calculations won't be detailled here. <br/>
 By running only 8 simualtions and associating $Re$ and $Nu$ for each of them we could plot $ln(Nu)$ with respect to $ln(Re)$ and perform a linear 
 regression. <br/>
 <br/>
-Firstly the linear correlation is quit valid since $R^2=0.95$. Secondly the linear coefficients allow us to write: <br/>
-$$ ln(Nu)$ = 0.7663.ln(Re) - 1.0861 $$ 
-$$ \Leftrightarrow 
+Firstly the linear correlation is quit valid since $R^2=0.95$. Secondly the linear coefficients and the logarithm properties allow us to write: <br/>
+$$ ln(Nu)$ = 0.7663.ln(Re) - 1.0861 $$ <br/>
+$$ \Leftrightarrow ln(Nu) = ln(Re^{0.7663}) - 1.0861 $$ <br/>
+$$ \Leftrightarrow exp(ln(Nu)) = exp(ln(Re^{0.7663}) - 1.0861) $$ <br/>
+$$ \Leftrightarrow Nu = Re^{0.7663} \times exp(-1.0861)$$ <br/>
+and finnaly: <br/>
+$$ \Leftrightarrow Nu \approx 0.34.Re^{0.77} $$ <br/>
+<br/>
+And just lie that we found the correlation back. <br/>
+Note that we only validated the power law between $Nu$ and $Re$. By changing the fluid properties and keeping the input parameters of the simulation constant, 
+we also could have find the contribution of $Pr$ also as a power law.
+
 
 
 
