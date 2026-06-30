@@ -18,17 +18,26 @@ Starting from almost a blank page, we had to apply the algorithm to the simple c
 [SCHEMA]
 After the postprocessing step we had to validate our results with the numerical data from Ghia and al.
 
+## Algorithm principle
+The projection method was developped simultaneously by Chorin and Temam in 1968. Its principle is the following:
+
 ## Spatial and time discretization
 
   ### Time
-  From a simple Newton's first order explicit scheme, we formulate the $k^{th}$ time step with: $$t^k = (k-1) \Delta t$$
+  We simply formulate the $k^{th}$ time step with: $$t^k = (k-1) \Delta t$$
 
   ### Space
   We discretized our square simulation domain with a staggered grid instead of a ... grid. It is a very commun way to compute precisely pressure gradients.
   [IMAGE DE LA GRILLE]
 
 ## Differential operators discretization
-Simulating a flow implies resolving the approximated Navier Stokes equations on the discretized space.
+Simulating a flow implies resolving the approximated Navier Stokes equations on the discretized space. This set of equations features continuous differential operators that we need to discretized.
+<br/> A classical way to do that is to use centered finite difference schemes. It is communly admitted that a second order scheme is quit accurate for simple cases. <br/>
+This schemes read :
+$$ \frac{\partial u}{partial x} = \frac{u(x+ \Delta x) - u(x- \Delta x)}{2 \Delta x} + O(\Delta x^2) $$ for the first derivative <br/>
+$$  \frac{\partial ^2 u}{partial x^2} = \frac{u(x+ \Delta x) - 2u(x) + u(x- \Delta x)}{\Delta x^2} + O(\Delta x^2) $$ for the second derivative <br/>
+<br/>
+From this one can change every differential operators in the Navier-Stokes equations to switch from continuous physical equations to dicretized computer-understandable ones.
 
 ## Poisson solver
 
