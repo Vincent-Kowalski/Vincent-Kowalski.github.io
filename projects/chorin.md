@@ -19,7 +19,16 @@ Starting from almost a blank page, we had to apply the algorithm to the simple c
 After the postprocessing step we had to validate our results with the numerical data from Ghia and al.
 
 ## Algorithm principle
-The projection method was developped simultaneously by Chorin and Temam in 1968. Its principle is the following:
+The projection method was developped simultaneously by Chorin and Temam in 1968.
+To solve a flow at each time step, one should find the velocity and pressure fields that satisfy the so-called Navier Stokes equation (NSE) :
+[[EQUATIONS]]
+The projection methed develop following principle :
+ - **Step 1: Solve the convection-diffusion equation :** It is derived from the 2nd Navier-Stokes equation and is basically the conservation of momentum equation
+ without the pressure gradient. The solution is written $\tilde{u}$ since this predicted velocity field does not satisfy the continuity equation yet. 
+ - **Step 2: Solve the Poisson equation :** By using both continuity and momentum equation one can end up with a specific differential equation for pressure called
+ the Poisson equation. We solve it using the predicted velocity from step 1.
+ - **Step 3: Correct the predicted velocity field: ** By reorganizing the terms in the Poisson equation, we can now compute the divergent-free velocity field knowing 
+ the pressure from step 2.
 
 ## Spatial and time discretization
 
@@ -37,9 +46,13 @@ This schemes read :
 $$ \frac{\partial u}{partial x} = \frac{u(x+ \Delta x) - u(x- \Delta x)}{2 \Delta x} + O(\Delta x^2) $$ for the first derivative <br/>
 $$  \frac{\partial ^2 u}{partial x^2} = \frac{u(x+ \Delta x) - 2u(x) + u(x- \Delta x)}{\Delta x^2} + O(\Delta x^2) $$ for the second derivative <br/>
 <br/>
-From this one can change every differential operators in the Navier-Stokes equations to switch from continuous physical equations to dicretized computer-understandable ones.
+From this one can replace every differential operators in the Navier-Stokes equations to switch from continuous physical equations to dicretized computer-understandable ones.
 
-## Poisson solver
+## Prediction of the velocity field (step 1)
+
+## Poisson solver (step 2)
+
+## Correct the velocity field (step 3)
 
 ## Spatial and time loops
 
