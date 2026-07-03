@@ -46,9 +46,44 @@ This schemes read :
 $$ \frac{\partial u}{partial x} = \frac{u(x+ \Delta x) - u(x- \Delta x)}{2 \Delta x} + O(\Delta x^2) $$ for the first derivative <br/>
 $$  \frac{\partial ^2 u}{partial x^2} = \frac{u(x+ \Delta x) - 2u(x) + u(x- \Delta x)}{\Delta x^2} + O(\Delta x^2) $$ for the second derivative <br/>
 <br/>
-From this one can replace every differential operators in the Navier-Stokes equations to switch from continuous physical equations to dicretized computer-understandable ones.
+From this one can replace every differential operators in the Navier-Stokes equations to switch from continuous physical equations to dicretized computer-understandable ones. 
+Below are 2 examples of discretized differential operators : velocity divergence and laplacian. The first is only featuring first derivative while the other utilizes 
+the second derative. <br/>
+<br/>
+For the divergence:
+
+```
+function [ div ] = div_vel(i, j, Ncx, Ncy, dx, dy, bc_u, bc_v, vel_u, vel_v )
+% Computes the divergence of the velocity field
+% div to be calculated at the cell center (i,j)
+
+    % Interior points: Use central differences
+    du_dx = (vel_u(i+1, j) - vel_u(i-1, j)) / (2 * dx);
+    dv_dy = (vel_v(i, j+1) - vel_v(i, j-1)) / (2 * dy);
+
+    % Compute divergence
+    div = du_dx + dv_dy;
+
+end
+```
+For the laplacian:
+
+```
+function [ lap ] = lap_vel_u( i, j, Ncx, Ncy, dx, dy, bc_u, vel_u  )
+%Computes the Laplacian of the velocity component u
+
+	% extract the relevant components of the u velocity
+	u_i = vel_u(i,j);
+		   
+	% apply the second order finite difference scheme at the point i+1/2, j
+	d_square_u_dx_square = (vel_u(i-1,j) - 2*u_i + vel_u(i+1,j)) / dx^2;
+	d_square_u_dy_square = (vel_u(i,j-1) - 2*u_i + vel_u(i,j+1)) / dy^2;
+
+	lap = d_square_u_dx_square + d_square_u_dy_square;
+```
 
 ## Prediction of the velocity field (step 1)
+
 
 ## Poisson solver (step 2)
 
