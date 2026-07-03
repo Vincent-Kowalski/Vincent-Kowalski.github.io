@@ -1,6 +1,6 @@
 # Vincent KOWALSKI
 
-** Numerical simulations doctorant | Applied fluid mechanics and Energetics **
+**Numerical simulations doctorant | Applied fluid mechanics and Energetics**
 
 📧 kowalskiv07@gmail.com | 📱 (+33) 06 52 97 14 04 | 🔗 [linkedin.com/in/vincent-kowalski-811364297/](https://www.linkedin.com/in/vincent-kowalski-811364297/) | 💻 [github.com/kenjinakamura](https://github.com/kenjinakamura) | 📚 [personnal web page](https://vincent-kowalski.github.io/)
 
