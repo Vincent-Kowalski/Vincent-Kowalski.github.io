@@ -117,14 +117,15 @@ $$\frac{\partial ^2 p}{\partial x^2}= \rho \frac{\partial}{\partial x_j}  \left(
 It is in fact a second-order linear differential equation that can be solved using a Gauss-Seidel method. Once both spatial differential operators are discretized
 using the central difference scheme, the pressure at the center of one cell can be isolated as a function of the neighboring pressures. <br/>
 <br/>
-This is why we need to loop the whole process and stop it whenever the norm of the difference between the old and new velocities are small enough.
+This is why we need to loop the whole process and stop it whenever the norm of the difference between the old and new velocities are small enough. <br/>
+For more information about the Gauss-Seidel method applied to a two-dimensional Poisson equation, you can check [this](https://www.f-legrand.fr/scidoc/docmml/numerique/elliptique/methode/methode.html) out.
 
 ## Correct the velocity field (step 3)
 After the first two steps, we do have the predicted velocity and pressure fields. At that point, we can't use the velocity as we found it since it does not verify 
 the continuity equation i.e. it is not divergence-free. <br/>
-To counter this, we can simply reorganise the terms in the Poisson equation. It reads:
+To correct this, we can simply reorganise the terms in the Poisson equation. It then reads:
 $$u_{i,j}^{k+1}= \tilde u_{i,j}^{k+1} - \frac{\Delta t}{\rho} \frac{\delta p^{k+1}}{\delta x_i}$$ <br/>
-As seen before $k$ is the time index, which shows that the velocity is now corrected only the terms from the actual time step. <br/>
+As seen before $k$ is the time index, which shows that the velocity is corrected only with the terms from the same time step. <br/>
 In a code form it looks like that: <br/>
 
 ```
@@ -135,13 +136,22 @@ for j = (1:Ncy)
 	end
 end
 ```
-<br/>
-<br/>
-For more information about the Gauss-Seidel method applied to a two-dimensional Poisson equation, you can check [this](https://www.f-legrand.fr/scidoc/docmml/numerique/elliptique/methode/methode.html) out.
 
-## Spatial and time loops
+## Time loop
+The above-explained 3 steps are intended to be reapeated for each single time step of the simulation. As we assume the flow to be stationnary, we only compute the values once the steady state is reached. 
+It means that there are two ways to stop the simulation:
+- Either by declaring a number of time steps in advance and the simulation stops once the final time step is reached
+- Or by computing the difference between the old and new velocity field and declaring a threshold for it. The simulation stops one the lower value is reached.
+I simply went for the first solution since we reach steady-state very fast. Indeed it only took 10 timesteps for the simulation to be well established.
 
 ## Verification
+To verify that our velocity field fits exactly the litterature values, we had to compare them with the data from Ghia and al. who ran the exact same case for the first time. <br/>
+We extracted a one-dimensional slice from both x- resp. y- component of the velocity profile located at the middle of the domain in the x resp. y direction. <br/>
+From there, we normalized it with the adimensional velocity : <br/>
+[[IMAGES DE LA POSITION DES SLICES ET DES RESULTATS]] <br/>
+<br/>
+As one can see, our results perfectly fit the data.
+
 
 
 
