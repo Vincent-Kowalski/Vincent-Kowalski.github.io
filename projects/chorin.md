@@ -135,6 +135,10 @@ for j = (1:Ncy)
 	end
 end
 ```
+<br/>
+<br/>
+For more information about the Gauss-Seidel method applied to a two-dimensional Poisson equation, you can check [this](https://www.f-legrand.fr/scidoc/docmml/numerique/elliptique/methode/methode.html) out.
+
 ## Spatial and time loops
 
 ## Verification
