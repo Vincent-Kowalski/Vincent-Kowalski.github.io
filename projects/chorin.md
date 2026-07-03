@@ -81,11 +81,40 @@ function [ lap ] = lap_vel_u( i, j, Ncx, Ncy, dx, dy, bc_u, vel_u  )
 
 	lap = d_square_u_dx_square + d_square_u_dy_square;
 ```
+<br/>
+<br/>
+<ins> Note </ins> : Only a part of the laplacian function is displayed. Particular attention was paid to the cells at the boundaries, which I won't explain here.
 
 ## Prediction of the velocity field (step 1)
+For this first step, we are going to apply the convection-advection equation to each cell of the grid. To do so, a spatial loop is implemented as follows:
+
+```
+%% Initialisation of the predicated velocity field
+    u_tilde = zeros(size(vel_u));
+    v_tilde = zeros(size(vel_v));
+	
+%% Compute the x-component of the predicated velocity field : u_tilde
+    for j = (2:Ncy+1)
+        for i = (2:Ncx)	
+			u_tilde(i,j) = (viski*lap_vel_u(i,j,Ncx,Ncy,dx,dy,bc_u,vel_u) - conv_vel_u(i,j,Ncx,Ncy,dx,dy,bc_u,bc_v,vel_u,vel_v))*tstep + vel_u(i,j);
+
+        end
+    end
+
+```
+As explained we predict the velocity field with the u_tilde(i,j) line. Each called function in this line represents a differential operator. Namely we have:
+- lap_vel_u (resp. lap_vel_v) : the laplacian of the x- (resp. y-) component of the velocity 
+- conv_vel u (resp. conv_vel_v) : the rotational of the x- (resp. y-) component of the velocity 
+
+
 
 
 ## Poisson solver (step 2)
+As explained before, pressure can be a bit treacky to deal with in CFD. It comes from the fact that NSE don't give an explicit differntial equation for pressure. <br/>
+However such an equation can be derived by combining NSE in lead to the Poisson equation which, in an incompressible steady state reads: <br/>
+$$\frac{partial ^2 p}{partial x^2}= \rho \frac{partial}{partial x_j}  \left( u_i \frac{\partial u_i}{\partial u_j} \right) $$ <br/>
+<br/>
+It is in fact a second-order differential equation that can be solved using a Gauss-Seidel method.
 
 ## Correct the velocity field (step 3)
 
