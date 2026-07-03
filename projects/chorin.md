@@ -126,10 +126,15 @@ To counter this, we can simply reorganise the terms in the Poisson equation. It 
 $$u_{i,j}^{k+1}= \tilde u_{i,j}^{k+1} - \frac{\Delta t}{\rho} \frac{\delta p^{k+1}}{\delta x_i}$$ <br/>
 As seen before $k$ is the time index, which shows that the velocity is now corrected only the terms from the actual time step. <br/>
 In a code form it looks like that: <br/>
-$$$$
 
-
-
+```
+for j = (1:Ncy)
+	for i = (1:Ncx)
+		vel_u(i,j) = u_tilde(i,j) - tstep/rho*grap_p_u(i,j,Ncx,Ncy,dx,dy,pres);
+		vel_v(i,j) = v_tilde(i,j) - tstep/rho*grap_p_v(i,j,Ncx,Ncy,dx,dy,pres);
+	end
+end
+```
 ## Spatial and time loops
 
 ## Verification
