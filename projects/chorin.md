@@ -123,7 +123,7 @@ This is why we need to loop the whole process and stop it whenever the norm of t
 After the first two steps, we do have the predicted velocity and pressure fields. At that point, we can't use the velocity as we found it since it does not verify 
 the continuity equation i.e. it is not divergence-free. <br/>
 To counter this, we can simply reorganise the terms in the Poisson equation. It reads:
-$$u_{i,j^{k+1}= \tilde u_{i,j}^{k+1} - \frac{\Delta t}{rho} \frac{\delta p^{k+1}}{\delta x_i}$$
+$$u_{i,j}^{k+1}= \tilde u_{i,j}^{k+1} - \frac{\Delta t}{rho} \frac{\delta p^{k+1}}{\delta x_i}$$
 
 
 ## Spatial and time loops
