@@ -43,8 +43,8 @@ The projection methed develop following principle :
 Simulating a flow implies resolving the approximated Navier Stokes equations on the discretized space. This set of equations features continuous differential operators that we need to discretized.
 <br/> A classical way to do that is to use centered finite difference schemes. It is communly admitted that a second order scheme is quit accurate for simple cases. <br/>
 This schemes read : <br/>
-$$\frac{\partial u}{partial x} = \frac{u(x+ \Delta x) - u(x- \Delta x)}{2 \Delta x} + O(\Delta x^2)$$ for the first derivative <br/>
-$$ \frac{\partial ^2 u}{partial x^2} = \frac{u(x+ \Delta x) - 2u(x) + u(x- \Delta x)}{\Delta x^2} + O(\Delta x^2)$$ for the second derivative <br/>
+$$\frac{\partial u}{\partial x} = \frac{u(x+ \Delta x) - u(x- \Delta x)}{2 \Delta x} + O(\Delta x^2)$$ for the first derivative <br/>
+$$\frac{\partial ^2 u}{\partial x^2} = \frac{u(x+ \Delta x) - 2u(x) + u(x- \Delta x)}{\Delta x^2} + O(\Delta x^2)$$ for the second derivative <br/>
 <br/>
 From this one can replace every differential operators in the Navier-Stokes equations to switch from continuous physical equations to dicretized computer-understandable ones. 
 Below are 2 examples of discretized differential operators : velocity divergence and laplacian. The first is only featuring first derivative while the other utilizes 
