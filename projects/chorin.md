@@ -27,7 +27,7 @@ The projection methed develop following principle :
  without the pressure gradient. The solution is written $\tilde{u}$ since this predicted velocity field does not satisfy the continuity equation yet. 
  - **Step 2: Solve the Poisson equation :** By using both continuity and momentum equation one can end up with a specific differential equation for pressure called
  the Poisson equation. We solve it using the predicted velocity from step 1.
- - **Step 3: Correct the predicted velocity field: ** By reorganizing the terms in the Poisson equation, we can now compute the divergent-free velocity field knowing 
+ - **Step 3: Correct the predicted velocity field:** By reorganizing the terms in the Poisson equation, we can now compute the divergent-free velocity field knowing 
  the pressure from step 2.
 
 ## Spatial and time discretization
@@ -110,13 +110,21 @@ As explained we predict the velocity field with the u_tilde(i,j) line. Each call
 
 
 ## Poisson solver (step 2)
-As explained before, pressure can be a bit treacky to deal with in CFD. It comes from the fact that NSE don't give an explicit differntial equation for pressure. <br/>
-However such an equation can be derived by combining NSE in lead to the Poisson equation which, in an incompressible steady state reads: <br/>
+As explained before, pressure can be a bit treacky to deal with in CFD. That comes from the fact that NSE don't give an explicit differntial equation for pressure. <br/>
+However such an equation can be derived by combining NSE, that leads to the Poisson equation, which in an incompressible steady state reads: <br/>
 $$\frac{\partial ^2 p}{\partial x^2}= \rho \frac{\partial}{\partial x_j}  \left( u_i \frac{\partial u_i}{\partial u_j} \right) $$ <br/>
 <br/>
-It is in fact a second-order differential equation that can be solved using a Gauss-Seidel method.
+It is in fact a second-order linear differential equation that can be solved using a Gauss-Seidel method. Once both spatial differential operators are discretized
+using the central difference scheme, the pressure at the center of one cell can be isolated as a function of the neighboring pressures. <br/>
+<br/>
+This is why we need to loop the whole process and stop it whenever the norm of the difference between the old and new velocities are small enough.
 
 ## Correct the velocity field (step 3)
+After the first two steps, we do have the predicted velocity and pressure fields. At that point, we can't use the velocity as we found it since it does not verify 
+the continuity equation i.e. it is not divergence-free. <br/>
+To counter this, we can simply reorganise the terms in the Poisson equation. It reads:
+$$u_{i,j^{k+1}= \tilde u_{i,j}^{k+1} - \frac{\Delta t}{rho} \frac{\delta p^{k+1}}{\delta x_i}$$
+
 
 ## Spatial and time loops
 
