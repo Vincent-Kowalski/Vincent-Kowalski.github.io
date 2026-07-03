@@ -112,7 +112,7 @@ As explained we predict the velocity field with the u_tilde(i,j) line. Each call
 ## Poisson solver (step 2)
 As explained before, pressure can be a bit treacky to deal with in CFD. It comes from the fact that NSE don't give an explicit differntial equation for pressure. <br/>
 However such an equation can be derived by combining NSE in lead to the Poisson equation which, in an incompressible steady state reads: <br/>
-$$\frac{partial ^2 p}{partial x^2}= \rho \frac{partial}{partial x_j}  \left( u_i \frac{\partial u_i}{\partial u_j} \right) $$ <br/>
+$$\frac{\partial ^2 p}{\partial x^2}= \rho \frac{\partial}{\partial x_j}  \left( u_i \frac{\partial u_i}{\partial u_j} \right) $$ <br/>
 <br/>
 It is in fact a second-order differential equation that can be solved using a Gauss-Seidel method.
 
