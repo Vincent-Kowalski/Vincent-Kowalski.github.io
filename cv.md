@@ -68,7 +68,7 @@ Realisation and redaction of 2 smoke extraction engineering studies and 1 facade
 
 ### Engineering diploma in Fluid Mechanics & Energetics
 **Polytech Nancy** | Nancy, France <br/>
-*Graduated: August 2025*
+*Graduation: August 2025*
 
 ### Master of mechanics as an Erasmus Student
 **Karlsruhe Institut of Technology** | Karlsruhe, Germany
