@@ -43,11 +43,12 @@ I am an industry- and results-oriented doctorant in Computational Fluid Dynamics
 
 ### Numerical simulation engineer | Efectis France | Bordeaux, France 
 *September 2025 - November 2025*
-- Realisation and redacation of 2 fire safety engineering studies including
-  - Parametrization of CFD simulations (Geometry creation, solver selection, boundariy/initial conditions specification)
-  - Postprocessing of the results (data extraction and transformations via VBA)
-  - Data visualization for the client (Graphs & heat maps, scientific representation)
-  - Study redaction and conclusions (comparisons with the fire safety norms)
+Realisation and redaction of 2 smoke extraction engineering studies and 1 facade fire safety study:
+- Parametrization of CFD simulations (Geometry creation, solver selection, boundariy/initial conditions specification)
+- Postprocessing of the results (data extraction and transformations via VBA)
+- Data visualization for the client (Graphs & heat maps, scientific representation)
+- Study redaction and conclusions (comparisons with the fire safety norms)
+
 
 ### CFD & Fire safety engineer trainee | Efectis France | Bordeaux, France
 *September 2015 - July 2020*
