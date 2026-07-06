@@ -40,27 +40,26 @@ I am an industry- and results-oriented doctorant in Computational Fluid Dynamics
 **Bordeaux Mechanics and engineering institut**, advisor: Arnaud ERRIGUIBLE
 *October 2026 - Present*
 
--
--
--
 
 ### Numerical simulation engineer | Efectis France | Bordeaux, France 
 *September 2025 - November 2025*
-
--
--
--
+- Realisation and redacation of 2 fire safety engineering studies including
+  - Parametrization of CFD simulations (Geometry creation, solver selection, boundariy/initial conditions specification)
+  - Postprocessing of the results (data extraction and transformations via VBA)
+  - Data visualization for the client (Graphs & heat maps, scientific representation)
+  - Study redaction and conclusions (comparisons with the fire safety norms)
 
 ### CFD & Fire safety engineer trainee | Efectis France | Bordeaux, France
 *September 2015 - July 2020*
-
--
--
--
+- Design and development of a simulation scripts generator (VBA)
+- Pre- & postprocessing automation of CFD simulations
+- MPI optimization
+- AI training and hyper-parameters selection 
 
 ### Operations Engineer trainee | EDF | Flamanville, France
--
--
+- Technical documentation bibliography (thermodynamics & reactor physics)
+- Numerical tool development & verification for nuclear safety sensors verifications
+- Numerical tool deployment to operations engineers
 
 ---
 
@@ -81,25 +80,14 @@ I am an industry- and results-oriented doctorant in Computational Fluid Dynamics
 
 ## Open Source Contributions
 
-- **torchprofile** – PyTorch model profiling library (1,200 stars, 80+ contributors)
-- **simrobot-env** – Robotic simulation RL environment (2,300 stars, used by 15+ universities)
-- **llm-eval-harness** – Unified evaluation framework for LLMs (700 stars)
-
 ---
 
 ## Complementary missions and services
 
 **Acadomia maths and Physics Teacher**
-- 
+- Collective & particular maths and physics courses, last year high school
+- Intensive collective revisions sessions (4 times 1 week)
 
-**University teaching**
-- 
-
----
-
-## Awards & Honors
-
-- 
 ---
 
 ## Additional Information
