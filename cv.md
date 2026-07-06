@@ -36,12 +36,12 @@ I am an industry- and results-oriented doctorant in Computational Fluid Dynamics
 
 ## Professional Experience
 
-### Ph.D. in Computational Fluid Dynamics | Bordeaux University |
+### Ph.D. in Computational Fluid Dynamics | Bordeaux University 
 **Bordeaux Mechanics and engineering institut**, advisor: Arnaud ERRIGUIBLE
 *October 2026 - Present*
 
 
-### Numerical simulation engineer | Efectis France | Bordeaux, France 
+### Numerical simulation engineer | Efectis France | Bordeaux, France <br/>
 *September 2025 - November 2025* <br/>
 Realisation and redaction of 2 smoke extraction engineering studies and 1 facade fire safety study:
 - Parametrization of CFD simulations (Geometry creation, solver selection, boundariy/initial conditions specification)
@@ -50,7 +50,7 @@ Realisation and redaction of 2 smoke extraction engineering studies and 1 facade
 - Study redaction and conclusions (comparisons with the fire safety norms)
 
 
-### CFD & Fire safety engineer trainee | Efectis France | Bordeaux, France
+### CFD & Fire safety engineer trainee | Efectis France | Bordeaux, France <br/>
 *September 2015 - July 2020*
 - Design and development of a simulation scripts generator (VBA)
 - Pre- & postprocessing automation of CFD simulations
