@@ -86,6 +86,7 @@ The classical compromise in MPI optimization is to choose the right amout of cor
 [[ GRPAHIQUE DE LA PERTE D EFFICACITE PAR COEUR UTILISES ]]
 <br/>
 Although the efficiency goes down, we still run the calculations in parallel i.e. on multiple cores to shorten the run time. So I wrote a VBA-script that automatically divides the simulation domain in rectangular pieces. Those had to be as equal in size and close to a square as possible. <br/>
+
 ![Parent Directory Image](/Images/maillage.PNG) <br/>
 <br/>
 The Toulouse calculation cluster also offers the possiblity to run several simulations at a time, each of them being divided into subdomains. The different simulations are splitted among the cores and then reassemble at the end. By organizing the repartition of subdomains to the implied cores, It is an optimized solution to run several simulations that are quite similar.
