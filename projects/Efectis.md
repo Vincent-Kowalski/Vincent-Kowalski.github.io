@@ -74,8 +74,8 @@ From this and according to the previously-developped paragraph, I applied 3 typi
 - Gaussian filter : curves usually show a very fractured graph and those high frequences oscillations would make the predictive model far less accurate. Gaussian filter acts as a low-pass filter to get rid of those oscillations
 - Curves extrapolation : certain sensor never get up to 900°C. Since we want to simulate the worst case fire scenario, we assume that everything in the
 
-Those 3 processes had to be automated since it should apply to all the sensors of each simulation. With an approximate average of 40 sensors/simulatiuon,  this represented approximately $107 \times 40 = 4280$ curves.
-
+Those 3 processes had to be automated since it should apply to all the sensors of each simulation. With an approximate average of 40 sensors/simulatiuon,  this represented approximately $107 \times 40 = 4280$ curves. <br/>
+![Parent Directory Image](/Images/brutes_vs_pt2/png)
 
 
 ## MPI optimization
@@ -85,7 +85,7 @@ The classical compromise in MPI optimization is to choose the right amout of cor
 [[ GRPAHIQUE DE LA PERTE D EFFICACITE PAR COEUR UTILISES ]]
 <br/>
 Although the efficiency goes down, we still run the calculations in parallel i.e. on multiple cores to shorten the run time. So I wrote a VBA-script that automatically divides the simulation domain in rectangular pieces. Those had to be as equal in size and close to a square as possible. <br/>
-[IMAGE D UN DE MES DECOUPAGE] <br/>
+![Parent Directory Image](/Images/maillage.PNG) <br/>
 <br/>
 The Toulouse calculation cluster also offers the possiblity to run several simulations at a time, each of them being divided into subdomains. The different simulations are splitted among the cores and then reassemble at the end. By organizing the repartition of subdomains to the implied cores, It is an optimized solution to run several simulations that are quite similar.
 
@@ -96,14 +96,14 @@ Once the postprocessing was done and after concatenating the results into a data
 Since the variable we're trying to predict is continuous (temperature), we're on a **supervised learning regression** problematic. The actual models (at least back in 2025) do so by meanns of a loss function by iteratively update their parameters. Those are going to change all the way through the learning unlike the so-called **hyperparameters** that one can see as the model "meta-" parameters. <br/>
 For the sake of completeness, let us mention that according to a case study, the predictive models are way more accurate at predicting the time of reach of certain temperature thresholds. <br/>
 Therefore the model output are the **TEMP** variables described with the scheme below : <br/>
-[IMAGE DES TEMP] <br/> 
+![Parent Directory Image](/Images/sortie.png) <br/> 
 <br/>
 We then tested different algorithmes to predicts the TEMP variables, namely:
 - Random forest algorithm
 - XGBoost algorithme
 - Neural networks
 
-[IMAGE DES PERFORMANCES DES MODELES RUDIMENTAIRES] <br/>
+![Parent Directory Image](/Images/modeles_rudi.png) <br/>
 <br/>
 Definition of the MAPE? <br/>
 <br/>
@@ -115,7 +115,7 @@ After this study, I only trained neural networks that show better performances o
 
 This whole project would not have been of any interest if the predicted variables did not show a good agreement with engineers-produced data. <br/>
 Once the optimized neural network was finalized, studies concerning its relative, absolute error were carried out. We also compared its results with real-case engineers studies.
-[IMAGE DES ERREURS RELATIVES]
+![Parent Directory Image](/Images/ES_optimizer.png)
 
 
 
