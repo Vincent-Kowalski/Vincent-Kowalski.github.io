@@ -15,7 +15,7 @@ The goal of the project was to implement by ourselves the Chorin projection meth
 Well-known in the CFD communnity, it has been validated more than once and represents the first step into incremental pressure-correcting algorithms. <br/>
 <br/>
 Starting from scratch, we had to apply the algorithm to the simple case of the driven square cavity.
-
+![Parent Directory Image](/Images/cavity.png)
 
 After the postprocessing step we had to validate our results with the numerical data from Ghia and al.
 
@@ -37,8 +37,8 @@ The projection methed develop following principle :
   We simply formulate the $k^{th}$ time step with: $$t^k = (k-1) \Delta t$$
 
   ### Space
-  We discretized our square simulation domain with a staggered grid instead of a ... grid. It is a very commun way to compute precisely pressure gradients.
-  [IMAGE DE LA GRILLE]
+  We discretized our square simulation domain with a staggered grid instead of a staggered grid. It is a very commun way to compute precisely pressure gradients.
+![Parent Directory Image](/Images/staggered_grid.png)
 
 ## Differential operators discretization
 Simulating a flow implies resolving the approximated Navier Stokes equations on the discretized space. This set of equations features continuous differential operators that we need to discretized.
@@ -149,7 +149,7 @@ I simply went for the first solution since we reach steady-state very fast. Inde
 To verify that our velocity field fits exactly the litterature values, we had to compare them with the data from Ghia and al. who ran the exact same case for the first time. <br/>
 We extracted a one-dimensional slice from both x- resp. y- component of the velocity profile located at the middle of the domain in the x resp. y direction. <br/>
 From there, we normalized it with the adimensional velocity : <br/>
-[[IMAGES DE LA POSITION DES SLICES ET DES RESULTATS]] <br/>
+![Parent Directory Image](/Images/chorin_results.png) <br/>
 <br/>
 As one can see, our results perfectly fit the data.
 
