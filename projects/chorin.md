@@ -14,8 +14,9 @@ During my last semester of study I attended this Numerical Fluid mechanics and t
 The goal of the project was to implement by ourselves the Chorin projection method in a simple case. Developped in 1967 it is the first algorithm capable of solving the pressure-velocity coupling in a incompressible flow. 
 Well-known in the CFD communnity, it has been validated more than once and represents the first step into incremental pressure-correcting algorithms. <br/>
 <br/>
-Starting from almost a blank page, we had to apply the algorithm to the simple case of the driven square cavity.
-[SCHEMA]
+Starting from scratch, we had to apply the algorithm to the simple case of the driven square cavity.
+
+
 After the postprocessing step we had to validate our results with the numerical data from Ghia and al.
 
 ## Algorithm principle
