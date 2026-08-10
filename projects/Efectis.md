@@ -80,7 +80,7 @@ Those 3 processes had to be automated since it should apply to all the sensors o
 
 ## MPI optimization
 Launching 107 LES simulations (SIZE OF SIMULATION DOMAINS) taking into account all sorts of heat tranfers is not feasible at the local scale in a reasonable amount of time. We had to deport the calculations on a University of Toulouse's cluster, using the Olympe supercalculator. <br/>
-The classical compromise in MPI optimization is to choose the right amout of cores in which running the simulation case in parallel. In theory, running the simulation in 2, 3, 4 ... cores should divide the running time by 2, 3, 4 etc... That's not how it works since information has to be shared among the cores. The more cores we use, the more information has to be transfered and the efficiency per core decreases.
+The classical compromise in MPI optimization is to choose the right amout of cores in which running the simulation case in parallel. Intuitively, running the simulation in 2, 3, 4 ... cores should divide the running time by 2, 3, 4 etc... That's not how it works since information has to be shared among the cores. The more cores we use, the more information has to be transfered and the efficiency per core decreases.
 <br/>
 [[ GRPAHIQUE DE LA PERTE D EFFICACITE PAR COEUR UTILISES ]]
 <br/>
