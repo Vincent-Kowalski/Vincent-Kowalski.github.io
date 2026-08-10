@@ -21,7 +21,7 @@ The overall goal is to predict the evolution of temperature in both time and spa
 In order to train a predictive AI tool, one should first restrain the number of input parameters. To do so, I carried out numerous sensitivity study cases.<br/>
 Once that done, I could jump into the simulations pre- and postprocessing. Since there were 107 of them, I had to automate the whole simulation process.<br/>
 Finally the concatenated output data base was used to train different AI algorithmes and compare them based on their performances. <br/>
-![Parent Directory Image](/Images/pipeline_project_efectis.png)
+![Parent Directory Image](/Images/pipeline_project_efectis)
 
 ## Study cases
 
