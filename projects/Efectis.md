@@ -75,6 +75,7 @@ From this and according to the previously-developped paragraph, I applied 3 typi
 - Curves extrapolation : certain sensor never get up to 900°C. Since we want to simulate the worst case fire scenario, we assume that everything in the
 
 Those 3 processes had to be automated since it should apply to all the sensors of each simulation. With an approximate average of 40 sensors/simulatiuon,  this represented approximately $107 \times 40 = 4280$ curves. <br/>
+<br/>
 ![Parent Directory Image](/Images/brute_vs_pt2.png)
 
 
