@@ -29,7 +29,8 @@ Before launching the simulations and for the sake of accuracy/performance compro
 The parameters that present a high influence on the temperature (output data) must be treated :
 - either by taking them as input parameters
 - or by keeping them constant in the model, which would represent a limit of the predictive tool
-
+  
+<br/> ![Parent Directory Image](/Images/propag_parois.PNG)
 With respect to an "initial" case, we tested both geometrical and numerical parameters. <br/> 
 The results were compared according to the calculations of the international ISO 16730-1 norm relative to the verification and validation of numerical models in fire safety. <br/>
 
@@ -44,14 +45,14 @@ According to the results I kept the following input parameters associated with t
 | HRRPUA (kW/m²) | [250 ; 500] | - |
 
 If you're not familiar with the quantitative and qualitative parameters used in fire modelling, here is a quick recap of their meaning : <br/>
-- Cinetic : 
-- Heat Realease Rate Per Unit Area :
+- Cinetic: qualitative parameter that indicates how fast the fire grows at the fire source. One chooses between Medium, Fast and Ultra Fast depending on how the burnt material is stored. The heat realease then follows the chosing curve based on experimental data.
+- Heat Realease Rate Per Unit Area (kW/m²): empirical parameter used to determine the power of a combustible surface. It is dependant on the type of material that is being burnt in the simulation.
 
 
 ## Preprocessing automation of the simulations
 FDS is a CFD software dedicated to fire scenario simulation. It takes all the simulation parameters from a text file (.fds extension) known as the simulation file.
 Given the variation range of the input parameters, we intended a total of 107 simulations for a reasonable budget. Therefore it was obviously not fiseable to modify "by hand" an initial case to adapt to each case. <br/>
- 
+ <br/>
  So I developped a comprehensive ready-to-use VBA Macro that produces the fds simulation script of any rectangular storage warehouse.
  The user was able to customize the following parameters or keeping the by default values for the sake of simplicity :
  
@@ -61,6 +62,7 @@ Given the variation range of the input parameters, we intended a total of 107 si
  physical phenomenon occur (smoke dynamics, heat conduction and convection, radiation, chemical processes ...). 
  To deal with that at a reasonable numerical cost, some implicit assumptions about fire propagation, material behaviors etc. are made in the model itself. <br/>
  <br/>
+ <br/>
  In this context, postprocessing appears to be an opportunity for the modeler to deal with the idealization of the fire process.<br/>
 To record the evolution of a variable (temperature, extinction coefficient ...) over time at one specific location in the simulation in FDS, 
 we use the so-called devices. One can think of it as a numerical sensor that can be put anywhere in the simulation domain by giving its 3 spatial coordinates.
@@ -69,6 +71,7 @@ Thanks to an Excel export, we then have access to all variable records in the en
 <br/>
 IMAGE DE COURBE <br/>
 <br/>
+
 From this and according to the previously-developped paragraph, I applied 3 typically used in fire engineering data transformations :
 - Temperature limitation up to 900°C : this is systematically performed by fire engineers and comes from the fact that 900°C is way enough to make classicly used construction material collapse.
 - Gaussian filter : curves usually show a very fractured graph and those high frequences oscillations would make the predictive model far less accurate. Gaussian filter acts as a low-pass filter to get rid of those oscillations
@@ -76,6 +79,7 @@ From this and according to the previously-developped paragraph, I applied 3 typi
 
 Those 3 processes had to be automated since it should apply to all the sensors of each simulation. With an approximate average of 40 sensors/simulatiuon,  this represented approximately $107 \times 40 = 4280$ curves. <br/>
 <br/>
+
 ![Parent Directory Image](/Images/brute_vs_pt2.png)
 
 
@@ -110,13 +114,17 @@ We then tested different algorithmes to predicts the TEMP variables, namely:
 Definition of the MAPE? <br/>
 <br/>
 After this study, I only trained neural networks that show better performances on my data set. The optimization phase could begin, simply by iteratively modify the **hyperparameters** of the model like :
-- number of
+- number of neurons layers
+- number of neurons per layer
+- Optimizer
+- Loss function
 - portions of the data base used for traning, test and validation
-- [[others]]
+- ...
 
 
 This whole project would not have been of any interest if the predicted variables did not show a good agreement with engineers-produced data. <br/>
 Once the optimized neural network was finalized, studies concerning its relative, absolute error were carried out. We also compared its results with real-case engineers studies.
+
 ![Parent Directory Image](/Images/ES_optimizer.png)
 
 
