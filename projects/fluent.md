@@ -18,6 +18,8 @@ The particularity of our project is that we decided to run simulations on both F
 ## Project overview
 Trapezoidal pipes are often used in HVAC facilities, notably to use them as vent ducts. Heat transfers happening within them has to be studied, especially
 forced convection. <br/>
+
+<br/> ![Parent Directory Image](/Images/config_fluent.png) <br/>
 First we gonna find the establishment length of the trapezoidal configuration, i.e. the length needed for the pipe to go from a zero-gradient uniform velocity
 profile to a fully turbulent state.<br/>
 Secondly, we gonna find the correlation between the 3 determining undimensionned numbers in this configuration: $Re$, $Pr$ and $Nu$ . In their numerical study
@@ -55,31 +57,24 @@ More information on the $k-\omega-SST$ model can be found [here](https://www.cfd
 
 ## Numerical mesh
 
-A structured mesh has been chosen for this relatively simple geometry. Special attention was paid to the near-wall regions where both velocity and temperature gradients
-are high. If the first cell of the mesh is too large, complex phenomena won't be resolved leading to inacurate predictions. However a too thin first cell would lead 
-to very expensive numerical ressources. Again, the whole point is to make a compromise between accuracy and performance. <br/>
-Knowing the flow parameters and the desired refinement one can compute the length of the first cell using the friction velocity and the shear stress at the wall. The 
-calculations won't be detailled here but the interested reader can throw an eye to this [very well done calculator](https://github.com/monikamadasamy/CFD-yplus-Near-Wall-Mesh-Calculator) 
-which explains near-wall turbulence basics. <br/>
+A structured mesh has been chosen for this relatively simple geometry. Special attention was paid to the near-wall regions where both velocity and temperature gradients are high. If the first cell of the mesh is too large, complex phenomena won't be resolved leading to inacurate predictions. However a too thin first cell would lead to very expensive numerical ressources. Again, the whole point is to make a compromise between accuracy and performance. <br/>
+Knowing the flow parameters and the desired refinement one can compute the length of the first cell using the friction velocity and the shear stress at the wall. The calculations won't be detailled here but the interested reader can throw an eye to this [very well done calculator](https://github.com/monikamadasamy/CFD-yplus-Near-Wall-Mesh-Calculator) which explains near-wall turbulence basics. <br/>
 <br/>
-Afterwards we took $y+=30$ and then a first cell length of $4.5e-5 m$. We then used the so-called Wall functions in both Fluent and OpenFOAM to inflate the mesh properly at the 
-edges of the domain.
+Afterwards we took $y+=30$ and then a first cell length of $4.5e-5 m$. We then used the so-called Wall functions in both Fluent and OpenFOAM to inflate the mesh properly at the edges of the domain.
 
 ## Boundary conditions
-Boundary conditions are mathematical conditions that the velocity, pressure and temperature fields have to meet at the edges of the domain for any time step. They originate
-from physical arguments that can be turned into an equation valid anywhen. <br/>
-For exemple, considering an internal flow like this one, the velocity has to be equal to zero at the wall. It is called the no-slip condition and it is a sepcial
-form of Dirichlet condition. We also use them for temperature as we set a fixed value for the temperatures at top and bottom of the pipe. <br/>
-At the in- and outlet, we want a straight velocity profile flowing into the pipe. To ensure that, we set the velocity gradient at zeroat the beginning and end of it : 
+Boundary conditions are mathematical conditions that the velocity, pressure and temperature fields have to meet at the edges of the domain for any time step. They originate from physical arguments that can be turned into an equation valid anywhen. <br/>
+<br/> For exemple, considering an internal flow like this one, the velocity has to be equal to zero at the wall. It is called the no-slip condition and it is a sepcial form of Dirichlet condition. We also use them for temperature as we set a fixed value for the temperatures at top and bottom of the pipe. <br/>
+<br/> At the in- and outlet, we want a straight velocity profile flowing into the pipe. To ensure that, we set the velocity gradient at zeroat the beginning and end of it : 
 $\frac{\partial U_x}{\partial x} =0$. This is a type of Neumann condition. We also use them for pressure. <br/>
-<br>
-These are pretty basic but considering our simple geometry, a more fancy one is going to significantly reduce the numerical cost of the simultion.
+<br> These are pretty basic but considering our simple geometry, a more fancy one is going to significantly reduce the numerical cost of the simultion.
 
 ### A numerical trick
 
 The pipe admits a vertial axis of symmetry. Because of that, we can simply simulate half of our domain and set a ** symmetry boundary condition ** at the middle 
 of the pipe. This way, the software knows that velocity, pressure and temperature profiles have to be mirrored along that surface. <br/>
 Ultimatly, it only sets the fluxes across the symmetry surface and the normal components of the variables to zero. The domain can basically be halved.
+![Parent Directory Image](/Images/config_symmetry.png)
 
 https://www.simscale.com/docs/simulation-setup/boundary-conditions/symmetry/
 
@@ -91,17 +86,18 @@ The flow is then called ** fully-developped **. <br/>
 As one can observe on the graphs, the velocity profile stop evolving after approximately 10 meters. After this distance the fluid can then be considered
 as full-developped so the establisment length in this configuration is 10 meters. It is in good agreement with the empirical formula (ADD SOURCE)
 Note that this value depends on the hydraulic diameter and thus the dimensions of the trapezoidal pipe. <br/>
-<br/>
-Moreover we had to demonstrate the correlation found by Rokni and Sunden $$Nu=0.03Re^{0.8}Pr^{0.3}$$. To do so we automated a simulations campaign where
+<br/> ![Parent Directory Image](/Images/resultats_profils.png) <br/>
+
+<br/> Moreover we had to demonstrate the correlation found by Rokni and Sunden $$Nu=0.03Re^{0.8}Pr^{0.3}$$. To do so we automated a simulations campaign where
 both $Re$ and $Nu$ were different. The Reynolds number can be computed in the preprocessing step since its only changing variable is $U$, the inlet
 velocity which is a parameter of the simulation. However Nusselt number has to be determined numerically based on the simulation results and that was the
 whole part of the postprocessing step. <br/>
-** In Ansys Fluent ** $Nu$ is calculated automatically. We just have to pick it up from the summary Report of the simulations. <br/>
-** In OpenFOAM ** there is not such a feature and we have to compute it "by hand" from the so-called bulk temperature of the flow. 
+**In Ansys Fluent** $Nu$ is calculated automatically. We just have to pick it up from the summary Report of the simulations. <br/>
+**In OpenFOAM** there is not such a feature and we have to compute it "by hand" from the so-called bulk temperature of the flow. 
 Calculations won't be detailled here. <br/>
 By running only 8 simualtions and associating $Re$ and $Nu$ for each of them we could plot $ln(Nu)$ with respect to $ln(Re)$ and perform a linear 
 regression. <br/>
-<br/>
+<br/> ![Parent Directory Image](/Images/corrélation_fluent.png) <br/>
 Firstly the linear correlation is quit valid since $R^2=0.95$. Secondly the linear coefficients and the logarithm properties allow us to write: <br/>
 $$ ln(Nu)$ = 0.7663.ln(Re) - 1.0861 $$ <br/>
 $$ \Leftrightarrow ln(Nu) = ln(Re^{0.7663}) - 1.0861 $$ <br/>
