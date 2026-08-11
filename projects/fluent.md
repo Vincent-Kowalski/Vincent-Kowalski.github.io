@@ -99,7 +99,7 @@ By running only 8 simualtions and associating $Re$ and $Nu$ for each of them we 
 regression. <br/>
 <br/> ![Parent Directory Image](/Images/corrélation_fluent.png) <br/>
 Firstly the linear correlation is quit valid since $R^2=0.95$. Secondly the linear coefficients and the logarithm properties allow us to write: <br/>
-$$ln(Nu)$ = 0.7663.ln(Re) - 1.0861$$ <br/>
+$$ln(Nu) = 0.7663.ln(Re) - 1.0861$$ <br/>
 $$\Leftrightarrow ln(Nu) = ln(Re^{0.7663}) - 1.0861$$ <br/>
 $$\Leftrightarrow exp(ln(Nu)) = exp(ln(Re^{0.7663}) - 1.0861)$$ <br/>
 $$\Leftrightarrow Nu = Re^{0.7663} \times exp(-1.0861)$$ <br/>
