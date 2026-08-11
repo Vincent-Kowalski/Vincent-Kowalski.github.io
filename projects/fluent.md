@@ -119,14 +119,3 @@ we also could have find the contribution of $Pr$ also as a power law.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
