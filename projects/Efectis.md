@@ -21,6 +21,8 @@ The overall goal is to predict the evolution of temperature in both time and spa
 In order to train a predictive AI tool, one should first restrain the number of input parameters. To do so, I carried out numerous sensitivity study cases.<br/>
 Once that done, I could jump into the simulations pre- and postprocessing. Since there were 107 of them, I had to automate the whole simulation process.<br/>
 Finally the concatenated output data base was used to train different AI algorithmes and compare them based on their performances. <br/>
+
+
 ![Parent Directory Image](/Images/pipeline_project_efectis)
 
 ## Study cases
@@ -80,6 +82,7 @@ From this and according to the previously-developped paragraph, I applied 3 typi
 Those 3 processes had to be automated since it should apply to all the sensors of each simulation. With an approximate average of 40 sensors/simulatiuon,  this represented approximately $107 \times 40 = 4280$ curves. <br/>
 <br/>
 
+
 ![Parent Directory Image](/Images/brute_vs_pt2.png)
 
 
@@ -102,6 +105,7 @@ Once the postprocessing was done and after concatenating the results into a data
 Since the variable we're trying to predict is continuous (temperature), we're on a **supervised learning regression** problematic. The actual models (at least back in 2025) do so by meanns of a loss function by iteratively update their parameters. Those are going to change all the way through the learning unlike the so-called **hyperparameters** that one can see as the model "meta-" parameters. <br/>
 For the sake of completeness, let us mention that according to a case study, the predictive models are way more accurate at predicting the time of reach of certain temperature thresholds. <br/>
 Therefore the model output are the **TEMP** variables described with the scheme below : <br/>
+
 ![Parent Directory Image](/Images/sortie.png) <br/> 
 <br/>
 We then tested different algorithmes to predicts the TEMP variables, namely:
