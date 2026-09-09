@@ -118,8 +118,16 @@ We then tested different algorithmes to predicts the TEMP variables, namely:
 
 ![Parent Directory Image](/Images/modeles_rudi.png) <br/>
 <br/>
-Definition of the MAPE? <br/>
 <br/>
+On this graph, one can observ the MAPE (Mean Absolute Pourcentage Error) of each variable sorted by algorithm. The MAPE represents the mean along each absolute error of the predicted values, namely, 
+$$ MAPE (%) = \frac{1}{N} \sum_{i=1}^N \frac{y_i - \hat{y_i}}{y_i} $$
+with :
+- $\hat{y_i}$ : the predicted values
+- $y_i$ : the actual values on the test set
+- N : the number of predicted values
+<br/>
+<br/>
+We could first observ that the first thresholds are the most difficult for the model to predict. It does make sense since th
 After this study, I only trained neural networks that show better performances on my data set. The optimization phase could begin, simply by iteratively modify the **hyperparameters** of the model like :
 - number of neurons layers
 - number of neurons per layer
