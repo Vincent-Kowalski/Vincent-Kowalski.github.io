@@ -22,8 +22,6 @@ In order to train a predictive AI tool, one should first restrain the number of 
 Once that done, I could jump into the simulations pre- and postprocessing. Since there were 107 of them, I had to automate the whole simulation process.<br/>
 Finally the concatenated output data base was used to train different AI algorithmes and compare them based on their performances. <br/>
 <br/>
-<br/>
-
 
 ![Parent Directory Image](/Images/pipeline_project_efectis)
 
@@ -34,7 +32,10 @@ The parameters that present a high influence on the temperature (output data) mu
 - either by taking them as input parameters
 - or by keeping them constant in the model, which would represent a limit of the predictive tool
   
-<br/> ![Parent Directory Image](/Images/propag_parois.PNG)
+<br/> 
+br/>
+
+![Parent Directory Image](/Images/propag_parois.PNG)
 With respect to an "initial" case, we tested both geometrical and numerical parameters. <br/> 
 The results were compared according to the calculations of the international ISO 16730-1 norm relative to the verification and validation of numerical models in fire safety. <br/>
 
@@ -56,18 +57,18 @@ If you're not familiar with the quantitative and qualitative parameters used in 
 ## Preprocessing automation of the simulations
 FDS is a CFD software dedicated to fire scenario simulation. It takes all the simulation parameters from a text file (.fds extension) known as the simulation file.
 Given the variation range of the input parameters, we intended a total of 107 simulations for a reasonable budget. Therefore it was obviously not fiseable to modify "by hand" an initial case to adapt to each case. <br/>
- <br/>
- So I developped a comprehensive ready-to-use VBA Macro that produces the fds simulation script of any rectangular storage warehouse.
- The user was able to customize the following parameters or keeping the by default values for the sake of simplicity :
+<br/>
+So I developped a comprehensive ready-to-use VBA Macro that produces the fds simulation script of any rectangular storage warehouse.
+The user was able to customize the following parameters or keeping the by default values for the sake of simplicity :
  
  ## Postprocessing of the simulations
  
- As fire engineers, we rarely use the output simulation data as they show up. Combustion is a very wide theme in which a very wide range of 
- physical phenomenon occur (smoke dynamics, heat conduction and convection, radiation, chemical processes ...). 
- To deal with that at a reasonable numerical cost, some implicit assumptions about fire propagation, material behaviors etc. are made in the model itself. <br/>
- <br/>
- <br/>
- In this context, postprocessing appears to be an opportunity for the modeler to deal with the idealization of the fire process.<br/>
+As fire engineers, we rarely use the output simulation data as they show up. Combustion is a very wide theme in which a very wide range of 
+physical phenomenon occur (smoke dynamics, heat conduction and convection, radiation, chemical processes ...). 
+To deal with that at a reasonable numerical cost, some implicit assumptions about fire propagation, material behaviors etc. are made in the model itself. <br/>
+<br/>
+<br/>
+In this context, postprocessing appears to be an opportunity for the modeler to deal with the idealization of the fire process.<br/>
 To record the evolution of a variable (temperature, extinction coefficient ...) over time at one specific location in the simulation in FDS, 
 we use the so-called devices. One can think of it as a numerical sensor that can be put anywhere in the simulation domain by giving its 3 spatial coordinates.
 We then sprinkle such devices through the domain to have a spatial distribution of the studied variable.
@@ -79,9 +80,9 @@ IMAGE DE COURBE <br/>
 From this and according to the previously-developped paragraph, I applied 3 typically used in fire engineering data transformations :
 - Temperature limitation up to 900°C : this is systematically performed by fire engineers and comes from the fact that 900°C is way enough to make classicly used construction material collapse.
 - Gaussian filter : curves usually show a very fractured graph and those high frequences oscillations would make the predictive model far less accurate. Gaussian filter acts as a low-pass filter to get rid of those oscillations
-- Curves extrapolation : certain sensor never get up to 900°C. Since we want to simulate the worst case fire scenario, we assume that everything in the
+- Curves extrapolation : certain sensors never get up to 900°C. However, in order to simulate the worst case fire scenario and to cancel the effects of under-oxygenation, we assume that all sensors that reach 300°C will actually go up to 900°C. It can be seen as a very coarse simplification but don't forget that this hypothesis is disavantageous anyway. If the fire requirements are verified under this hypothesis, it'll sure be for reality. Using the 10 last points of the curve, I implemented a quadratic extrapolation of the affected curves, up to 900°C.
 
-Those 3 processes had to be automated since it should apply to all the sensors of each simulation. With an approximate average of 40 sensors/simulatiuon,  this represented approximately $107 \times 40 = 4280$ curves. <br/>
+Those 3 processes had to be automated since it should apply to all the sensors of each simulation. With an approximate average of 40 sensors/simulatiuon, this represented approximately $107 \times 40 = 4280$ curves. <br/>
 <br/>
 
 
