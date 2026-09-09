@@ -120,7 +120,7 @@ We then tested different algorithmes to predicts the TEMP variables, namely:
 <br/>
 <br/>
 On this graph, one can observ the MAPE (Mean Absolute Pourcentage Error) of each variable sorted by algorithm. The MAPE represents the mean along each absolute error of the predicted values, namely, 
-$MAPE (%) = \frac{1}{N} \sum_{i=1}^N \frac{y_i - \hat{y_i}}{y_i}$
+$MAPE=\frac{1}{N} \sum_{i=1}^N \frac{y_i - \hat{y_i}}{y_i}$
 with :
 - $\hat{y_i}$ : the predicted values
 - $y_i$ : the actual values on the test set
