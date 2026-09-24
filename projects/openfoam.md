@@ -132,9 +132,9 @@ The 2 other #include lines incorporate important simulations output values that 
 
 ## Testing the single simulation
 Although our final goal is to launch a certain number of these simulations, we can run single simulation to see what they look like. <br/>
-<br/> After reaching the steady-state, I used ParaView to plot the velocity magnitude over the entire domain.
+<br/> After reaching the steady-state, I used ParaView to plot the velocity magnitude over the entire domain for different angle of incidence.
 
-<img src="/Images/alpha5.png" alt="drawing" width="400"/>  <img src="/Images/alpha10.png" alt="drawing" width="400"/>  <img src="/Images/alpha15.png" alt="drawing" width="400"/>  <img src="/Images/alpha20.png" alt="drawing" width="400"/> 
+<img src="/Images/alpha5.png" alt="drawing" width="400" caption="alpha = 1"/>  <img src="/Images/alpha10.png" alt="drawing" width="400"/>  <img src="/Images/alpha15.png" alt="drawing" width="400"/>  <img src="/Images/alpha20.png" alt="drawing" width="400"/> 
 
 
 ## Parameter study automation
