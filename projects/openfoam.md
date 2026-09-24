@@ -134,25 +134,27 @@ The 2 other #include lines incorporate important simulations output values that 
 Although our final goal is to launch a certain number of these simulations, we can run single simulation to see what they look like. <br/>
 <br/> After reaching the steady-state, I used ParaView to plot the velocity magnitude over the entire domain for different angle of incidence.
 
-<figure>
-    <img src="/Images/alpha5.png" alt="U magnitude for alpha = 1" width="400" />
-    <figcaption> alpha = 5 </figcaption>
-	width=
-</figure>
-<figure>
-    <img src="/Images/alpha10.png" alt="U magnitude for alpha = 1" width="400" />
-    <figcaption> alpha = 10 </figcaption>
-</figure>
+<table>
+<tr>
+<td align="center">
+  <img src="/Images/alpha1.png" width="300"><br>
+  alpha = 1
+</td>
+<td align="center">
+  <img src="/Images/alpha5.png" width="300"><br>
+  alpha = 5
+</td>
+<td align="center">
+  <img src="/Images/alpha10.png" width="300"><br>
+  alpha = 10
+</td>
+<td align="center">
+  <img src="/Images/alpha1.png" width="300"><br>
+  alpha = 1
+</td>
+</tr>
+</table>
 
-<figure>
-    <img src="/Images/alpha15.png" alt="U magnitude for alpha = 1" width="400" />
-    <figcaption> alpha = 15 </figcaption>
-</figure>
-
-<figure>
-    <img src="/Images/alpha20.png" alt="U magnitude for alpha = 1" width="400" />
-    <figcaption> alpha = 20 </figcaption>
-</figure>
 
 
 
