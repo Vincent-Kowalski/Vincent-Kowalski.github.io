@@ -86,6 +86,7 @@ More information on the $k-\omega-SST$ model can be found [here](https://www.cfd
 To reduce the resolution of each time step to a algebraic system of equations, one necessarly needs the following values of the researched fields (v and p):
 - on the entire domain at the first time step
 - on the edge of the domain at any time step <br/>
+<br/>
 These are repectively called initial and boundary conditions. <br/>
 At time 0, the pressure and velocity fields can be taken as homogeneous in the whole domain. In particular, the chosen values shouldn't be too far from the calculated ones, otherwise
 it's going to be harder (or even impossible) to converge to the solution. <br/>
@@ -98,7 +99,19 @@ Remark: in a RANS turbulence model we must give boundary conditions for the turb
 More information about RANS modelling and the turbulent variables can be found here.
 
 ## Postprocessing the simulation
-OpenFOAM offers pre-defined functions that compute a wide range of output variables. In order not to waste computation ressources, OpenFOAM will only compute the data that the user required. In the ControlDict directory, one simply needs to indicate the variable whose values have to be saved at each simulation time step. 
+OpenFOAM offers pre-defined functions that compute a wide range of output variables. In order not to waste computation ressources, OpenFOAM will only compute the data that the user required. In the ControlDict directory, one simply needs to indicate the variables whose values have to be saved at each simulation time step.
+'''
+functions
+{
+#include "forceCoeffs_object"; # Compute the coefficients
+#include "residual_object"; # Residuals
+#includeFunc "yPlus"; # Built-in functions
+#
+}
+'''
+<br/>
+The 2 other #include lines incorporate important simulations output values that will be stored at each time step.
+
 
 ## Parameter study automation
 I detailled above the preprocessing and postprocessing for 1 specific simulation. Now, we need to automatically adapt this process to the 19 other simulations.
