@@ -116,9 +116,12 @@ The 2 other #include lines incorporate important simulations output values that 
 
 ## Parameter study automation
 I detailled above the preprocessing and postprocessing for 1 specific simulation. Now, we need to automatically adapt this process to the 19 other simulations.
-The good news is that nothing really changes in the pre- and postprocessing processes except for $\alpha$.
+The good news is that nothing really changes in the pre- and postprocessing processes except for $\alpha$. <br/>
+<br/> The 3 above Python files manage respectively the preprocessing, the processing and the postprocessing process of the study. By simply lauching them successively in the working directory, they autonomously solve this study case, resulted in ploting the $C_L$ / $C_d$ polar curve.
 
 ### Preprocessing automation
+
+
 ```
 def main():
     
