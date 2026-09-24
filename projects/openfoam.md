@@ -137,10 +137,6 @@ Although our final goal is to launch a certain number of these simulations, we c
 <table>
 <tr>
 <td align="center">
-  <img src="/Images/alpha1.png" width="300"><br>
-  alpha = 1
-</td>
-<td align="center">
   <img src="/Images/alpha5.png" width="300"><br>
   alpha = 5
 </td>
@@ -149,8 +145,12 @@ Although our final goal is to launch a certain number of these simulations, we c
   alpha = 10
 </td>
 <td align="center">
-  <img src="/Images/alpha1.png" width="300"><br>
-  alpha = 1
+  <img src="/Images/alpha15.png" width="300"><br>
+  alpha = 15
+</td>
+<td align="center">
+  <img src="/Images/alpha20.png" width="300"><br>
+  alpha = 20
 </td>
 </tr>
 </table>
