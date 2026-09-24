@@ -17,16 +17,8 @@ One of the "mini-project" was the parameter study of incidence angle $\alpha$ on
 ![Parent Directory Image](/Images/plane_scheme.png)
 <br/>
 <br/>
-For the purpose of flying an airplane, a wing profile developps both a vertical and a horizontal force component, respectively called lift and drag forces. The intricated phenomena that give rise to these forces are compliated but the formula connecting them to the flow characteristics is: &nbsp <br/>
-<br/>
-$$F_L = \frac{C_L}{2} \times \rho \times V^2 \times A $$
-<br/>
-with 
-- $C_L$ the lift coefficient (-)
-- \rho the density of the fluid (kg/$m^3$)
-- V the speed of the fluid (m/s)
-- A the surface area of the wing (m²)
-The objective was to determine numerically the aerodynamic coefficients (lift and drag) based on the recorded pressure drop as a function of $\alpha$. We then end up with the polar curve representing the variation of $C_l$ with resepct to $C_d$. The incidence angle varies implicitly along the graph. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+For the purpose of flying an airplane, a wing profile developps both a vertical and a horizontal force component, respectively called lift and drag forces. The intricated phenomena that give rise to these forces are compliated but they can be determined by the flow characteristics.
+The objective was to determine numerically the aerodynamic coefficients (lift and drag) based on the recorded pressure drop as a function of $\alpha$. We then end up with the polar curve representing the variation of $C_l$ with resepct to $C_d$. The incidence angle varies implicitly along the graph. <br/>
 <br/>
 ![Parent Directory Image](/Images/Cl_Cd.png)
 <br/>
@@ -36,10 +28,18 @@ The flow is considered to be incompressible since we are interested in the regio
 The aerodynamical forces acting on the wing profile are the lift force (directed perpendicular to the incident aorflow) and the drag force (directed in the incident airflow direction).
 Note that the paradigm of inclining the wing profile of $\alpha$ radiant is exactly the same situation as keeping the wing horizontal and inclining the incident airflow.
 Lift and drag forces can be expressed as : <br/>
+<br/>
 $$F_l = \frac{\rho}{2} u_{\inf}^2.S_{ref}.C_l$$ <br/>
-&nbsp; &nbsp; &nbsp;
-$$F_d = \frac{\rho}{2} u_{\inf}^2.S_{ref}.C_d$$
-
+<br/>
+$$F_d = \frac{\rho}{2} u_{\inf}^2.S_{ref}.C_d$$ <br/>
+<br/>
+with 
+- $C_L$ the lift coefficient (-)
+- $C_d$ the drag coefficient (-)
+- \rho the density of the fluid (kg/$m^3$)
+- $U_{inf} the speed of the incoming fluid (m/s)
+- S_{ref} the surface area of the wing (m²)
+<br/>
 As one can see, their are very similar. Only the aerodynamical coefficients differentiate them. This is why the knowledge of the above menionned polar curve
 is a prerequisite for determining the performances of the aircraft.
 + calcul des coefficients
