@@ -7,21 +7,27 @@ permalink: /projects/openfoam/
 # Parameter study of the incidence angle on a NACA wing profile (OpenFOAM)
 
 ## Context
-During my Erasmus study trip at the Karlsruher Insitut für Technology I attended a very qualitative course given by Dr.-Ing. Stroh on OpenFOAM CFD. This was my first ever contact with CFD and it went very smoothly since Dr Stroh was not only a very good technician but also a remarquable teacher.\
-Although the personnal work load necessary to attend the test was very high compared to other modules, I don't regret chosing this course and discovering a wide range of CFD applications by myself. The homework consisted indeed of parametrization, lauching and postprocessing of 12 cases throughout the semester. The whole process had then to be automated and delivered as a runnable Linux Script.\
+During my Erasmus study trip at the Karlsruher Insitut für Technology in Germany I attended a very qualitative course given by Dr.-Ing. Stroh on OpenFOAM CFD. This was my first ever contact with CFD and it went very smoothly since Dr Stroh was not only a very good technician but also a remarquable teacher.\
+Although the personnal work load necessary to attend the test was very high compared to other modules, I don't regret chosing this course and discovering a wide range of CFD applications by myself. The homework consisted in parametrization, lauching and postprocessing of 12 cases throughout the semester. The whole process had then to be automated and delivered as a runnable Linux Script.\
 
 ## Project overview
 
-One of the "mini-project" was the parameter study of incidence angle on a wing profile. The angle varies from 0 to 20 ° with a step of 1 °.
+One of the "mini-project" was the parameter study of incidence angle $\alpha$ on a wing profile.
 \
 ![Parent Directory Image](/Images/plane_scheme.png)
 \
-The objective was to determine numericaly the aerodynamic coefficients (lift and drag) based on the recorded pressure drop as a function of $\alpha$. We then end up
-with the polar curve representing the variation of $C_l$ with resepct to $C_d$. The incidence angle varies implicitly along the grpah. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+For the purpose of flying an airplane, a wing profile developps both a vertical and a horizontal force component, respectively called lift and drag forces. The intricated phenomena that give rise to these forces are compliated but the formula connecting them to the flow characteristics is:
+$$L = \frac{C_L}{2} \times \rho \times V^2 \times A $$
+with 
+- $C_L$ the lift coefficient
+- \rho the density of the fluid
+- V the speed of the fluid
+- A the surface area of the wing
+The objective was to determine numerically the aerodynamic coefficients (lift and drag) based on the recorded pressure drop as a function of $\alpha$. We then end up with the polar curve representing the variation of $C_l$ with resepct to $C_d$. The incidence angle varies implicitly along the grpah. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 \
 ![Parent Directory Image](/Images/Cl_Cd.png)
 \
-The flow is considered to be incompressible since we are interested in the regions of the flow that are relatively close the wing edge.
+The flow is considered to be incompressible since we are interested in the regions of the flow that are relatively close to the wing edge.
 
 ## Theoretical background
 The aerodynamical forces acting on the wing profile are the lift force (directed perpendicular to the incident aorflow) and the drag force (directed in the incident airflow direction).
@@ -99,6 +105,9 @@ The good news is that nothing really changes in the pre- and postprocessing proc
 	
 ## Results
 
+
+## Sources 
+https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/lift-equation/
 
 
 
