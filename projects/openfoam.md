@@ -99,6 +99,20 @@ Remark: in a RANS turbulence model we must give boundary conditions for the turb
 More information about RANS modelling and the turbulent variables can be found here.
 
 ## Postprocessing the simulation
+Once the steady-state of our simulations would be reached, the $C_L$ and $C_D$ coefficients would be calculable, only based on the pressure distribution around the wing profile.
+To compute them, one first need the so-called pressure coefficient distribution: <br>
+<br/>
+$$C_P = \frac{p(x, y) - p_{\infty}}{\frac{1}{2} \rho \U_{\infty}^2} $$ <br/>
+<br/>
+With:
+- $p$ the dynamic pressure (Pa)
+- $p_{\infty}$ the atmospheric pressure, far from the airfoil (Pa)
+- $\rho$ the density of the surrounding fluid (kg/$m^3$)
+- $U_{\infty}$ the velocity of the incoming flow (m/s)
+which then results in the expressions of $C_L$ and $C_D$ <br/>
+<br/>
+$$C_L = \int_0^c (C_P_extrados - C_P_intrados) dx $$
+
 OpenFOAM offers pre-defined functions that compute a wide range of output variables. In order not to waste computation ressources, OpenFOAM will only compute the data that the user required. In the ControlDict directory, one simply needs to indicate the variables whose values have to be saved at each simulation time step.
 
 ```
@@ -117,11 +131,11 @@ The 2 other #include lines incorporate important simulations output values that 
 ## Parameter study automation
 I detailled above the preprocessing and postprocessing for 1 specific simulation. Now, we need to automatically adapt this process to the 19 other simulations.
 The good news is that nothing really changes in the pre- and postprocessing processes except for $\alpha$. <br/>
-<br/> The 3 above Python files manage respectively the preprocessing, the processing and the postprocessing process of the study. By simply lauching them successively in the working directory, they autonomously solve this study case, resulted in ploting the $C_L$ / $C_d$ polar curve.
+<br/> The 3 above Python files manage respectively the preprocessing, the processing and the postprocessing process of the study. By simply lauching them successively in the working directory, they autonomously solve this study case resulting in ploting the $C_L$ / $C_d$ polar curve.
 
 ### Preprocessing automation
-
-
+The first Python file manages the preprocessing. From the 'raw' OpenFOAM directory template for single simulations, the script copies it in the main function, pastes it in a new directory using the Create_folder and Copy_Template functions and then changes the value of $\alpha$ in the OpenFOAM directory. <br/>
+<br/>
 ```
 def main():
     
@@ -131,7 +145,7 @@ def main():
     
     
     # repeat for each alpha angle
-    for i in range(0,21):
+    for i in range(0,20):
         
         name = 'alpha'+str(i)
         
@@ -154,11 +168,51 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+<br>
+At the end of this first script, we are left with 21 identical directories, except for the value of the incidence angle. 
 	
 ### Processing automation
+In CFD, the processing part is the easiest one when we are not talking about MPI and code parallelization. Here, the simulations are not computally challenging, even launched on one single CPU core. <br/>
+<br/> This is why the processing Python file is kind of straightforward, only lauching the ./Allrun script in each simulation directory. This script then calls the known OpenFOAM functions that generate the mesh and basically all the simulation algorithm that we set up in the template.
 	
 ### Postprocessing automation
-	
+Finally, with the now available data from all the simulations, we are able to draw the polar graph and print it automatically. 
+
+```
+def main():
+    
+    # Create the processed folder and the CdCl_values file
+    create_Processed_folder()
+    
+    # Repeat for each angle
+    for i in range(0,21):
+
+        pwd = os.getcwd()
+        
+        # Extract the Cd and Cl coeffs of the simulation from the correct folder
+        os.chdir(os.getcwd()+"/alpha"+str(i)+"/Template/postProcessing/forceCoeffs_object/0")
+        cd, cl = extract_ForceCoeffs()
+
+        # Go back in the tree
+        os.chdir(str(pwd))
+        parent_directory = os.path.abspath('..')
+
+        # Write the extracted values in the CdCl_values file
+        os.chdir(parent_directory+"/Data/raw/processed")
+        with open('CdCl_values', 'a') as file:
+        
+            file.write("\n"+str(cd)+"   "+str(cl))
+
+        os.chdir(str(pwd))
+        
+    # Create a gnuplot graph   
+    Create_Graph()
+
+
+
+if __name__ == "__main__":
+    main()
+```
 	
 ## Results
 
