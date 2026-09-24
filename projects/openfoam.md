@@ -131,8 +131,7 @@ functions
 The 2 other #include lines incorporate important simulations output values that will be stored at each time step.
 
 ## Testing the single simulation
-Although our final goal is to launch a certain number of these simulations, we can run single simulation to see what they look like. <br/>
-<br/> After reaching the steady-state, I used ParaView to plot the velocity magnitude over the entire domain for different angle of incidence.
+Although our final goal is to launch a certain number of these simulations, we can run single simulation to see what they look like. After reaching the steady-state, I used ParaView to plot the velocity magnitude over the entire domain for different angle of incidence.
 
 <table>
 <tr>
@@ -157,7 +156,7 @@ Although our final goal is to launch a certain number of these simulations, we c
 </tr>
 </table>
 
-
+The plots show typical results for the evolution of velocity magnitude with the angle of incidence. It grows as $\alpha$ increases but at 20° the stall angle has been reached and the magnitude collapses (see more on the stall phenomenon here). In light of this results, the simulations seem quite coherent. Let's go through the final step of the study.
 
 
 ## Parameter study automation
