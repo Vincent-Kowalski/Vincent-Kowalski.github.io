@@ -136,7 +136,21 @@ Although our final goal is to launch a certain number of these simulations, we c
 
 <figure>
     <img src="/Images/alpha5.png" alt="U magnitude for alpha = 1" />
-    <figcaption> Ceci est la légende de l'image </figcaption>
+    <figcaption> alpha = 5 </figcaption>
+</figure>
+<figure>
+    <img src="/Images/alpha10.png" alt="U magnitude for alpha = 1" />
+    <figcaption> alpha = 10 </figcaption>
+</figure>
+
+<figure>
+    <img src="/Images/alpha15.png" alt="U magnitude for alpha = 1" />
+    <figcaption> alpha = 15 </figcaption>
+</figure>
+
+<figure>
+    <img src="/Images/alpha20.png" alt="U magnitude for alpha = 1" />
+    <figcaption> alpha = 20 </figcaption>
 </figure>
 
 <img src="/Images/alpha5.png" alt="drawing" width="400" legend="alpha = 1"/>  <img src="/Images/alpha10.png" alt="drawing" width="400"/>  <img src="/Images/alpha15.png" alt="drawing" width="400"/>  <img src="/Images/alpha20.png" alt="drawing" width="400"/> 
