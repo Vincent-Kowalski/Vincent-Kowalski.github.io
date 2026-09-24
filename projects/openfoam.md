@@ -137,19 +137,21 @@ Although our final goal is to launch a certain number of these simulations, we c
 <table>
 <tr>
 <td align="center">
-  <img src="/Images/alpha5.png" width="300"><br>
+  <img src="/Images/alpha5.png" width="400"><br>
   alpha = 5
 </td>
 <td align="center">
-  <img src="/Images/alpha10.png" width="300"><br>
+  <img src="/Images/alpha10.png" width="400"><br>
   alpha = 10
 </td>
+</tr>
+<tr>
 <td align="center">
-  <img src="/Images/alpha15.png" width="300"><br>
+  <img src="/Images/alpha15.png" width="400"><br>
   alpha = 15
 </td>
 <td align="center">
-  <img src="/Images/alpha20.png" width="300"><br>
+  <img src="/Images/alpha20.png" width="400"><br>
   alpha = 20
 </td>
 </tr>
