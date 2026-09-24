@@ -36,9 +36,9 @@ $$F_d = \frac{\rho}{2} u_{\inf}^2.S_{ref}.C_d$$ <br/>
 with 
 - $C_L$ the lift coefficient (-)
 - $C_d$ the drag coefficient (-)
-- \rho the density of the fluid (kg/$m^3$)
-- $U_{inf} the speed of the incoming fluid (m/s)
-- S_{ref} the surface area of the wing (m²)
+- $\rho$ the density of the fluid (kg/$m^3$)
+- $U_{inf}$ the speed of the incoming fluid (m/s)
+- $S_{ref}$ the surface area of the wing (m²)
 <br/>
 As one can see, their are very similar. Only the aerodynamical coefficients differentiate them. This is why the knowledge of the above menionned polar curve
 is a prerequisite for determining the performances of the aircraft.
@@ -66,10 +66,10 @@ the same undimensioned numbers, regardless of the experiment or simulation scale
 This is why we only describe the fluid by the Reynolds number of the simulation. <br/>
 $$Re_c = \frac{\rho.U_{inf}.c}{\nu}$$
 with :
-- \rho : the volumetric mass of the fluid (kg/$m^3$)
-- \mu : the dynamic viscosity of of the fluid (kg/m/s)
+- $\rho$ : the volumetric mass of the fluid (kg/$m^3$)
+- $\mu$ : the dynamic viscosity of of the fluid (kg/m/s)
 - c : the chord of the wing profile (m)
-- U_{inf} : the velocity of the incident flow (m/s) <br/>
+- $U_{inf}$ : the velocity of the incident flow (m/s) <br/>
 <br/>
 Although we know the values $\rho_{air}$, $\mu_{air}, etc. it doesn't matter since others can reproduce my simulation with the same Reynolds number. <br/>
 The chosen $Re$ has to be coherent with the physical parameters of air and high enough to allow a fully turbulent flow. $Re = 10^6$ meets those conditions.
@@ -98,6 +98,7 @@ Remark: in a RANS turbulence model we must give boundary conditions for the turb
 More information about RANS modelling and the turbulent variables can be found here.
 
 ## Postprocessing the simulation
+OpenFOAM offers pre-defined functions that compute a wide range of output variables. In order not to waste computation ressources, OpenFOAM will only compute the data that the user required. In the ControlDict directory, one simply needs to indicate the variable whose values have to be saved at each simulation time step. 
 
 ## Parameter study automation
 I detailled above the preprocessing and postprocessing for 1 specific simulation. Now, we need to automatically adapt this process to the 19 other simulations.
