@@ -16,8 +16,8 @@ One of the "mini-project" was the parameter study of incidence angle $\alpha$ on
 \
 ![Parent Directory Image](/Images/plane_scheme.png)
 \
-For the purpose of flying an airplane, a wing profile developps both a vertical and a horizontal force component, respectively called lift and drag forces. The intricated phenomena that give rise to these forces are compliated but the formula connecting them to the flow characteristics is:
-$$L = \frac{C_L}{2} \times \rho \times V^2 \times A $$
+For the purpose of flying an airplane, a wing profile developps both a vertical and a horizontal force component, respectively called lift and drag forces. The intricated phenomena that give rise to these forces are compliated but the formula connecting them to the flow characteristics is: \
+$$F_L = \frac{C_L}{2} \times \rho \times V^2 \times A $$
 with 
 - $C_L$ the lift coefficient
 - \rho the density of the fluid
