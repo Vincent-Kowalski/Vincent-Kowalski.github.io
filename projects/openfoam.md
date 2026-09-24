@@ -8,14 +8,15 @@ permalink: /projects/openfoam/
 
 ## Context
 During my Erasmus study trip at the Karlsruher Insitut für Technology in Germany I attended a very qualitative course given by Dr.-Ing. Stroh on OpenFOAM CFD. This was my first ever contact with CFD and it went very smoothly since Dr Stroh was not only a very good technician but also a remarquable teacher.\
-Although the personnal work load necessary to attend the test was very high compared to other modules, I don't regret chosing this course and discovering a wide range of CFD applications by myself. The homework consisted in parametrization, lauching and postprocessing of 12 cases throughout the semester. The whole process had then to be automated and delivered as a runnable Linux Script.\
+Although the personnal work load necessary to attend the test was very high compared to other modules, I don't regret chosing this course and discovering a wide range of CFD applications by myself. The homework consisted in parametrization, lauching and postprocessing of 12 cases throughout the semester. The whole process had then to be automated and delivered as a runnable Linux Script. <br/>
 
 ## Project overview
 
-One of the "mini-project" was the parameter study of incidence angle $\alpha$ on a wing profile.
+One of the "mini-project" was the parameter study of incidence angle $\alpha$ on a wing profile. <br/>
 \
 ![Parent Directory Image](/Images/plane_scheme.png)
 \
+<br/>
 For the purpose of flying an airplane, a wing profile developps both a vertical and a horizontal force component, respectively called lift and drag forces. The intricated phenomena that give rise to these forces are compliated but the formula connecting them to the flow characteristics is: \
 $$F_L = \frac{C_L}{2} \times \rho \times V^2 \times A $$
 with 
