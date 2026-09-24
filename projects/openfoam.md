@@ -109,11 +109,14 @@ With:
 - $p_{\infty}$ the atmospheric pressure, far from the airfoil (Pa)
 - $\rho$ the density of the surrounding fluid (kg/$m^3$)
 - $U_{\infty}$ the velocity of the incoming flow (m/s)
-which then results in the expressions of $C_L$ and $C_D$ <br/>
+which then results in the expressions of $C_L$ and $C_D$ by integrating around the edge of the airfoil <br/>
 <br/>
-$$C_L = \int_{\partial L} C_P d(\frac{x/l} $$
-
-OpenFOAM offers pre-defined functions that compute a wide range of output variables. In order not to waste computation ressources, OpenFOAM will only compute the data that the user required. In the ControlDict directory, one simply needs to indicate the variables whose values have to be saved at each simulation time step.
+$$C_L = \int_{\partial L} C_P d(\frac{x}{l}) $$
+$$C_D =- \int_{\partial L} C_P d(\frac{z}{l}) $$ <br/>
+<br/>
+Since we know the exact curve that follows a NACA wing profile, one can complete the calculations. Note that we could restrain the physical domain to only one variable $\theta$ since each point has to lie on the airfoil, simplifying the integrals. <br/>
+<br/>
+OpenFOAM offers pre-defined functions that compute the aerodynamic coefficients for us. In order not to waste computation ressources, OpenFOAM will only compute the data that the user required. In the ControlDict directory, one simply needs to indicate the variables whose values have to be saved at each simulation time step.
 
 ```
 functions
@@ -126,6 +129,10 @@ functions
 
 <br/>
 The 2 other #include lines incorporate important simulations output values that will be stored at each time step.
+
+## Testing the single simulation
+Although our final goal is to launch a certain number of these simulations, we can run single simulation to see what they look like. <br/>
+<br/> After reaching the steady-state, I used ParaView to plot the velocity magnitude over the entire domain.
 
 
 ## Parameter study automation
@@ -176,7 +183,8 @@ In CFD, the processing part is the easiest one when we are not talking about MPI
 <br/> This is why the processing Python file is kind of straightforward, only lauching the ./Allrun script in each simulation directory. This script then calls the known OpenFOAM functions that generate the mesh and basically all the simulation algorithm that we set up in the template.
 	
 ### Postprocessing automation
-Finally, with the now available data from all the simulations, we are able to draw the polar graph and print it automatically. 
+Finally, with the now available data from all the simulations, we are able to draw the polar graph and print it automatically. As discussed earlier, the "forceCoeffs_object" function computes the aerodynamic forces and coefficients using the pressure field as input.<br/>
+<br/> The postprocessing Python script then simply extract those values from the generated data and plot them in a gnuplot window that is printed as a pop-up.
 
 ```
 def main():
