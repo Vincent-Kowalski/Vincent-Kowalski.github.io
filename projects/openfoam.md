@@ -134,9 +134,7 @@ The 2 other #include lines incorporate important simulations output values that 
 Although our final goal is to launch a certain number of these simulations, we can run single simulation to see what they look like. <br/>
 <br/> After reaching the steady-state, I used ParaView to plot the velocity magnitude over the entire domain.
 
-![Parent Directory Image](/Images/alpha10.png)
-
-<img src="/Images/alpha10.png" alt="drawing" width="200"/>
+<img src="/Images/alpha5.png" alt="drawing" width="400"/>  <img src="/Images/alpha10.png" alt="drawing" width="400"/>  <img src="/Images/alpha15.png" alt="drawing" width="400"/>  <img src="/Images/alpha20.png" alt="drawing" width="400"/> 
 
 
 ## Parameter study automation
