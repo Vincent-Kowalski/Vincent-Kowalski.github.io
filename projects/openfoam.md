@@ -13,21 +13,23 @@ Although the personnal work load necessary to attend the test was very high comp
 ## Project overview
 
 One of the "mini-project" was the parameter study of incidence angle $\alpha$ on a wing profile. <br/>
-\
-![Parent Directory Image](/Images/plane_scheme.png)
-\
 <br/>
-For the purpose of flying an airplane, a wing profile developps both a vertical and a horizontal force component, respectively called lift and drag forces. The intricated phenomena that give rise to these forces are compliated but the formula connecting them to the flow characteristics is: \
+![Parent Directory Image](/Images/plane_scheme.png)
+<br/>
+<br/>
+For the purpose of flying an airplane, a wing profile developps both a vertical and a horizontal force component, respectively called lift and drag forces. The intricated phenomena that give rise to these forces are compliated but the formula connecting them to the flow characteristics is: &nbsp <br/>
+<br/>
 $$F_L = \frac{C_L}{2} \times \rho \times V^2 \times A $$
+<br/>
 with 
-- $C_L$ the lift coefficient
-- \rho the density of the fluid
-- V the speed of the fluid
-- A the surface area of the wing
-The objective was to determine numerically the aerodynamic coefficients (lift and drag) based on the recorded pressure drop as a function of $\alpha$. We then end up with the polar curve representing the variation of $C_l$ with resepct to $C_d$. The incidence angle varies implicitly along the grpah. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-\
+- $C_L$ the lift coefficient (-)
+- \rho the density of the fluid (kg/$m^3$)
+- V the speed of the fluid (m/s)
+- A the surface area of the wing (m²)
+The objective was to determine numerically the aerodynamic coefficients (lift and drag) based on the recorded pressure drop as a function of $\alpha$. We then end up with the polar curve representing the variation of $C_l$ with resepct to $C_d$. The incidence angle varies implicitly along the graph. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<br/>
 ![Parent Directory Image](/Images/Cl_Cd.png)
-\
+<br/>
 The flow is considered to be incompressible since we are interested in the regions of the flow that are relatively close to the wing edge.
 
 ## Theoretical background
