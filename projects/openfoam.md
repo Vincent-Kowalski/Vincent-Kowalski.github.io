@@ -118,11 +118,43 @@ The 2 other #include lines incorporate important simulations output values that 
 I detailled above the preprocessing and postprocessing for 1 specific simulation. Now, we need to automatically adapt this process to the 19 other simulations.
 The good news is that nothing really changes in the pre- and postprocessing processes except for $\alpha$.
 
-	# Preprocessing automation
+### Preprocessing automation
+```
+def main():
+    
+    # go to the parent directory which is the project directory
+    parent_directory = os.path.abspath('..')
+    os.chdir(parent_directory)
+    
+    
+    # repeat for each alpha angle
+    for i in range(0,21):
+        
+        name = 'alpha'+str(i)
+        
+        alpha = i
+        
+        # create the alpha## folder
+        Create_folder(name)
+        
+        # copy the Template simulation in the folder
+        Copy_Template(name)
+        
+        # change the value of alpha 
+        Change_Template(name, alpha)
+        
+    os.chdir(os.getcwd()+"/Code/")
+      
+    
+## ------ Call the main function ------ ##
+#
+if __name__ == "__main__":
+    main()
+```
 	
-	# Processing automation
+### Processing automation
 	
-	# Postprocessing automation
+### Postprocessing automation
 	
 	
 ## Results
