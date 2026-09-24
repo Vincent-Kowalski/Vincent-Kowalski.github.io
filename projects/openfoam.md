@@ -111,7 +111,7 @@ With:
 - $U_{\infty}$ the velocity of the incoming flow (m/s)
 which then results in the expressions of $C_L$ and $C_D$ <br/>
 <br/>
-$$C_L = \int_0^c (C_P_extrados - C_P_intrados) dx $$
+$$ C_L = \int_0^c (C_P_extrados - C_P_intrados) dx $$
 
 OpenFOAM offers pre-defined functions that compute a wide range of output variables. In order not to waste computation ressources, OpenFOAM will only compute the data that the user required. In the ControlDict directory, one simply needs to indicate the variables whose values have to be saved at each simulation time step.
 
