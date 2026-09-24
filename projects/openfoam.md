@@ -137,6 +137,7 @@ Although our final goal is to launch a certain number of these simulations, we c
 <figure>
     <img src="/Images/alpha5.png" alt="U magnitude for alpha = 1" />
     <figcaption> alpha = 5 </figcaption>
+	width=
 </figure>
 <figure>
     <img src="/Images/alpha10.png" alt="U magnitude for alpha = 1" />
@@ -153,7 +154,7 @@ Although our final goal is to launch a certain number of these simulations, we c
     <figcaption> alpha = 20 </figcaption>
 </figure>
 
-<img src="/Images/alpha5.png" alt="drawing" width="400" legend="alpha = 1"/>  <img src="/Images/alpha10.png" alt="drawing" width="400"/>  <img src="/Images/alpha15.png" alt="drawing" width="400"/>  <img src="/Images/alpha20.png" alt="drawing" width="400"/> 
+<img src="/Images/alpha5.png" alt="drawing" width="400" figcaption="alpha = 1"/>  <img src="/Images/alpha10.png" alt="drawing" width="400"/>  <img src="/Images/alpha15.png" alt="drawing" width="400"/>  <img src="/Images/alpha20.png" alt="drawing" width="400"/> 
 
 
 ## Parameter study automation
