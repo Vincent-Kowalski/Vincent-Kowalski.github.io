@@ -135,26 +135,25 @@ Although our final goal is to launch a certain number of these simulations, we c
 <br/> After reaching the steady-state, I used ParaView to plot the velocity magnitude over the entire domain for different angle of incidence.
 
 <figure>
-    <img src="/Images/alpha5.png" alt="U magnitude for alpha = 1" />
+    <img src="/Images/alpha5.png" alt="U magnitude for alpha = 1" width="400" />
     <figcaption> alpha = 5 </figcaption>
 	width=
 </figure>
 <figure>
-    <img src="/Images/alpha10.png" alt="U magnitude for alpha = 1" />
+    <img src="/Images/alpha10.png" alt="U magnitude for alpha = 1" width="400" />
     <figcaption> alpha = 10 </figcaption>
 </figure>
 
 <figure>
-    <img src="/Images/alpha15.png" alt="U magnitude for alpha = 1" />
+    <img src="/Images/alpha15.png" alt="U magnitude for alpha = 1" width="400" />
     <figcaption> alpha = 15 </figcaption>
 </figure>
 
 <figure>
-    <img src="/Images/alpha20.png" alt="U magnitude for alpha = 1" />
+    <img src="/Images/alpha20.png" alt="U magnitude for alpha = 1" width="400" />
     <figcaption> alpha = 20 </figcaption>
 </figure>
 
-<img src="/Images/alpha5.png" alt="drawing" width="400" figcaption="alpha = 1"/>  <img src="/Images/alpha10.png" alt="drawing" width="400"/>  <img src="/Images/alpha15.png" alt="drawing" width="400"/>  <img src="/Images/alpha20.png" alt="drawing" width="400"/> 
 
 
 ## Parameter study automation
