@@ -20,7 +20,7 @@ One of the "mini-project" was the parameter study of incidence angle $\alpha$ on
 For the purpose of flying an airplane, a wing profile developps both a vertical and a horizontal force component, respectively called lift and drag forces. The intricated phenomena that give rise to these forces are compliated but they can be determined by the flow characteristics.
 The objective was to determine numerically the aerodynamic coefficients (lift and drag) based on the recorded pressure drop as a function of $\alpha$. We then end up with the polar curve representing the variation of $C_l$ with resepct to $C_d$. The incidence angle varies implicitly along the graph. <br/>
 <br/>
-![Parent Directory Image](/Images/Cl_Cd.png)
+![Parent Directory Image](/Images/Cl_Cd.png) <br/>
 <br/>
 The flow is considered to be incompressible since we are interested in the regions of the flow that are relatively close to the wing edge.
 
@@ -45,6 +45,10 @@ is a prerequisite for determining the performances of the aircraft.
 + calcul des coefficients
 
 ## Quick overview of NACA profiles
+In this study, we observe the performances of the 0010 NACA airfoil. <br/>
+The NACA (National Advisory Committee for Aeronautics) wing profiles have been developped by the NASA since the late 1920s'. With a range of different series reaching a very wide range of performances, spacecraft engineers have thrown the basics of industrial and scalable aerodynamics. <br/>
+The digits of a NACA airfoil correspond to the developped series and more importantly to their features. In the four-digits series, the first 2 give the curvature of the profile and its location on the chord. A 4-digits code of the type 00xx then means that the profile has no curvature ans therefore is symmetrical. One can show that giving a curvature to a profile strictly betters its aerodynamic performances. The last 2 digits describe the maximal thickness of the profile, based on the pourcentage of the chord. <br/>
+<br/> NACA series is a fascinating research theme and represent one of the most important milestone in aerodynamics. More information about it can be found [here](https://nasa.fandom.com/wiki/NACA_airfoil#1-series)
 
 ## Solver choice
 In OpenFOAM, several solvers are available. It is an algorithm that solve the coupling between pressure and velocity in the Navier-Stokes system equations.
