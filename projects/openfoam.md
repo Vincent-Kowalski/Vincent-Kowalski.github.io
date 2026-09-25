@@ -20,9 +20,9 @@ For the purpose of flying an airplane, a wing profile developps both a vertical 
 The objective was to determine numerically the aerodynamic coefficients (lift and drag) based on the recorded pressure drop as a function of $\alpha$. We then end up with the polar curve representing the variation of $C_l$ with resepct to $C_d$. The incidence angle varies implicitly along the graph. <br/>
 <br/>
 <figure> 
-<div style="text-align: center;">
+<div style="display: flex; flex-direction: column; align-items: center;">
 <img src="/Images/Cl_Cd.png" width="400" align="center" alt="Polar curve example" title="Polar curve example">
-	<figcaption> Polar curve example </figcaption>
+<div><figcaption> Polar curve example </figcaption></div>
 </div>
 </figure>
 <br/>
