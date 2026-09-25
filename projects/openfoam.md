@@ -97,6 +97,14 @@ To reduce the resolution of each time step to a algebraic system of equations, o
 These are repectively called initial and boundary conditions. <br/>
 At time 0, the pressure and velocity fields can be taken as homogeneous in the whole domain. In particular, the chosen values shouldn't be too far from the calculated ones, otherwise
 it's going to be harder (or even impossible) to converge to the solution. <br/>
+<br/> The boundary conditions can be summarized in this chart:
+
+| | Inlet | Outlet | Profile edges | Top | Bottom |
+|:--------|:--------|:---------:|:---------:|:---------:|:---------:|
+|U| Fixed Value | Free stream | No slip | Fixed Value | Fixed Value |
+|p| Free stream | Free stream | Fixed value | Fixed value | Fixed Value |
+
+
 For the boundaries, one has to adapt the conditions depending on the edge. Note that the wing profile is a solid boundary and has to be considered as a domain edge. <br/>
 For the inlet and outlet, we can set a so-called "free stream" condition for both pressure and temperature. It is especially appropriate ti the fluid flowing in and out
 at a constant $U_{inf}$ velocity. <br/>
