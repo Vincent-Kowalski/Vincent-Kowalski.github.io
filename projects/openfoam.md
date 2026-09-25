@@ -7,7 +7,8 @@ permalink: /projects/openfoam/
 # Parameter study of the incidence angle on a NACA wing profile (OpenFOAM)
 
 ## Context
-During my Erasmus study trip at the Karlsruher Insitut für Technology in Germany I attended a very qualitative course given by Dr.-Ing. Stroh on OpenFOAM CFD. This was my first ever contact with CFD and it went very smoothly since Dr Stroh was not only a very good technician but also a remarquable teacher.\
+During my Erasmus study trip at the Karlsruher Insitut für Technology in Germany I attended a very qualitative course given by Dr.-Ing. Stroh on OpenFOAM CFD. This was my first ever contact with CFD and it went very smoothly since Dr Stroh was not only a very good technician but also a remarquable teacher. <br/>
+<br/>
 Although the personnal work load necessary to attend the test was very high compared to other modules, I don't regret chosing this course and discovering a wide range of CFD applications by myself. The homework consisted in parametrization, lauching and postprocessing of 12 cases throughout the semester. The whole process had then to be automated and delivered as a runnable Linux Script. <br/>
 
 ## Project overview
