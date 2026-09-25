@@ -4,12 +4,12 @@ title: Parameter study of a NACA wing profile
 permalink: /projects/openfoam/
 ---
 
-## Context
+# Context
 During my Erasmus study trip at the Karlsruher Insitut für Technology in Germany I attended a very qualitative course given by Dr.-Ing. Stroh on OpenFOAM CFD. This was my first ever contact with CFD and it went very smoothly since Dr Stroh was not only a very good technician but also a remarquable teacher. <br/>
 <br/>
 Although the personnal work load necessary to attend the test was very high compared to other modules, I don't regret chosing this course and discovering a wide range of CFD applications by myself. The homework consisted in parametrization, lauching and postprocessing of 12 cases throughout the semester. The whole process had then to be automated and delivered as a runnable Linux Script. <br/>
 
-## Project overview
+# Project overview
 
 One of the "mini-project" was the parameter study of incidence angle $\alpha$ on a wing profile. <br/>
 <br/>
@@ -26,7 +26,7 @@ The objective was to determine numerically the aerodynamic coefficients (lift an
 <br/>
 The flow is considered to be incompressible since we are interested in the regions of the flow that are relatively close to the wing edge.
 
-## Theoretical background
+# Theoretical background
 The aerodynamical forces acting on the wing profile are the lift force (directed perpendicular to the incident aorflow) and the drag force (directed in the incident airflow direction).
 Note that the paradigm of inclining the wing profile of $\alpha$ radiant is exactly the same situation as keeping the wing horizontal and inclining the incident airflow.
 Lift and drag forces can be expressed as : <br/>
@@ -55,7 +55,7 @@ The NACA (National Advisory Committee for Aeronautics) wing profiles have been d
 <br/> The digits of a NACA airfoil correspond to the developped series and more importantly to their features. In the four-digits series, the first 2 give the curvature of the profile and its location on the chord. A 4-digits code of the type 00xx then means that the profile has no curvature ans therefore is symmetrical. One can show that giving a curvature to a profile strictly betters its aerodynamic performances. The last 2 digits describe the maximal thickness of the profile, based on the pourcentage of the chord. <br/>
 <br/> NACA series is a fascinating research theme and represent one of the most important milestone in aerodynamics. More information about it can be found [here](https://nasa.fandom.com/wiki/NACA_airfoil#1-series)
 
-## Solver choice
+# Solver choice
 In OpenFOAM, several solvers are available. It is an algorithm that solve the coupling between pressure and velocity in the Navier-Stokes system equations.
 The choice of the solver is determining: one won't end up with the same results with different solvers. Its choice always depends on the configuration. <br/>
 <br/> An important feature of our configuration is that, eventually, the fluid is going to reach a fully turbulent stationnary state with air flowing smoothly around the profile.
@@ -65,7 +65,7 @@ the simulation last?") but when field variations are assumed to be neglictable (
 <br/> One can also spot a non-converging simulation more effectively instead of desperatly trying to run it with a higher number of time steps. <br/> 
 In an incompressible case like this one, we can use the well-known simpleFOAM solver.
 
-## Fluid characteristics determination
+# Fluid characteristics determination
 In CFD one typically uses undimensioned numbers to describe fluid characteristics. It allows scientists all around the world to test the configuration by taking
 the same undimensioned numbers, regardless of the experiment or simulation scale. <br/>
 This is why we only describe the fluid by the Reynolds number of the simulation. <br/>
@@ -81,7 +81,7 @@ with :
 Although we know the values $\rho_{air}$, $\mu_{air}$, etc. it doesn't matter since others can reproduce my simulation with the same Reynolds number. <br/>
 The chosen $Re$ has to be coherent with the physical parameters of air and high enough to allow a fully turbulent flow. $Re = 10^6$ meets those conditions.
 
-## Turbulence model definition
+# Turbulence model definition
 In a RANS simulation, turbulence isn't resolved at any scale: it is modeled. This means we are looking at the averaged Navier Stokes equations, closing the problem using
 another set of 2 equations and a priori knowledge about turbulence. The 2 conservation equations can be applied to k (turbulent kinetic energy) and $\epsilon$ (the turbulent
 dissipation) or to k and $\omega$ (specific dissipation). In a nutshell the $k-\omega-SST$ turbulence model combines the strengths of the above-mentionned 
@@ -89,7 +89,7 @@ two-equations models and is widely use. <br/>
 <br/>
 More information on the $k-\omega-SST$ model can be found [here](https://www.cfd-online.com/Wiki/SST_k-omega_model) <br/>.
 
-## Initial and boundary conditions
+# Initial and boundary conditions
 To reduce the resolution of each time step to a algebraic system of equations, one necessarly needs the following values of the researched fields (v and p):
 - on the entire domain at the first time step
 - on the edge of the domain at any time step
@@ -115,7 +115,7 @@ i.e. should equal 0. It is obviously not the case of pressure which cannot fall 
 <br/> Remark: in a RANS turbulence model we must give boundary conditions for the turbulent variables ($k$, $\omega$, $\nu_T$). <br/>
 More information about RANS modelling and the turbulent variables can be found [here](https://www.cfd-online.com/Wiki/RANS-based_turbulence_models)
 
-## Postprocessing the simulation
+# Postprocessing the simulation
 Once the steady-state of our simulations would be reached, the $C_L$ and $C_D$ coefficients would be calculable, only based on the pressure distribution around the wing profile.
 To compute them, one first need the so-called pressure coefficient distribution: <br>
 <br/>
@@ -147,7 +147,7 @@ functions
 <br/>
 The 2 other #include lines incorporate important simulations output values that will be stored at each time step.
 
-## Testing the single simulation
+# Testing the single simulation
 Although our final goal is to launch a certain number of these simulations, we can run single simulation to see what they look like. After reaching the steady-state, I used ParaView to plot the velocity magnitude over the entire domain for different angle of incidence.
 
 <table>
@@ -176,12 +176,12 @@ Although our final goal is to launch a certain number of these simulations, we c
 The plots show typical results for the evolution of velocity magnitude with the angle of incidence. It grows as $\alpha$ increases but at 20° the stall angle has been reached and the magnitude collapses (see more on the stall phenomenon here). In light of this results, the simulations seem quite coherent. Let's go through the final step of the study.
 
 
-## Parameter study automation
+# Parameter study automation
 I detailled above the preprocessing and postprocessing for 1 specific simulation. Now, we need to automatically adapt this process to the 19 other simulations.
 The good news is that nothing really changes in the pre- and postprocessing processes except for $\alpha$. <br/>
 <br/> The 3 above Python files manage respectively the preprocessing, the processing and the postprocessing process of the study. By simply lauching them successively in the working directory, they autonomously solve this study case resulting in ploting the $C_L$ / $C_d$ polar curve.
 
-### Preprocessing automation
+## Preprocessing automation
 The first Python file manages the preprocessing. From the 'raw' OpenFOAM directory template for single simulations, the script copies it in the main function, pastes it in a new directory using the Create_folder and Copy_Template functions and then changes the value of $\alpha$ in the OpenFOAM directory. <br/>
 <br/>
 ```
@@ -219,11 +219,11 @@ if __name__ == "__main__":
 <br>
 At the end of this first script, we are left with 21 identical directories, except for the value of the incidence angle. 
 	
-### Processing automation
+## Processing automation
 In CFD, the processing part is the easiest one when we are not talking about MPI and code parallelization. Here, the simulations are not computally challenging, even launched on one single CPU core. <br/>
 <br/> This is why the processing Python file is kind of straightforward, only lauching the ./Allrun script in each simulation directory. This script then calls the known OpenFOAM functions that generate the mesh and basically all the simulation algorithm that we set up in the template.
 	
-### Postprocessing automation
+## Postprocessing automation
 Finally, with the now available data from all the simulations, we are able to draw the polar graph and print it automatically. As discussed earlier, the "forceCoeffs_object" function computes the aerodynamic forces and coefficients using the pressure field as input.<br/>
 <br/> The postprocessing Python script then simply extract those values from the generated data and plot them in a gnuplot window that is printed as a pop-up.
 
@@ -263,13 +263,7 @@ if __name__ == "__main__":
     main()
 ```
 	
-## Results
-
-
-## Sources 
-https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/lift-equation/
-
-
+# Results
 
 
 
