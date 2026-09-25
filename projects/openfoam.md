@@ -1,6 +1,6 @@
 ---
 layout: page
-title: openfoam
+title:
 permalink: /projects/openfoam/
 ---
 
