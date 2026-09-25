@@ -25,6 +25,7 @@ The objective was to determine numerically the aerodynamic coefficients (lift an
 <img src="/Images/Cl_Cd.png" width="400" align="center" alt="Polar curve example">
 </div>
 <br/>
+<br/>
 The flow is considered to be incompressible since we are interested in the regions of the flow that are relatively close to the wing edge.
 
 ## Theoretical background
