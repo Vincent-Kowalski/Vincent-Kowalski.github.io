@@ -95,22 +95,20 @@ To reduce the resolution of each time step to a algebraic system of equations, o
 
 <br/>
 These are repectively called initial and boundary conditions. <br/>
-At time 0, the pressure and velocity fields can be taken as homogeneous in the whole domain. In particular, the chosen values shouldn't be too far from the calculated ones, otherwise
-it's going to be harder (or even impossible) to converge to the solution. <br/>
-<br/> The boundary conditions can be summarized in this chart:
+At time 0, the pressure and velocity fields can be taken as homogeneous in the whole domain. In particular, the chosen values shouldn't be too far from the calculated ones, otherwise it's going to be harder (or even impossible) to converge to the solution. <br/>
+<br/> Concerning the boundaries, the wing profile is in fact placed in an incoming air current that flows from left to right. The top and bottom of the simumation domain are considered as solid impervious walls as well as the airfoil edges. <br/>
+That being said, the boundary conditions can be summarized in this chart:
 
 | | Inlet | Outlet | Profile edges | Top | Bottom |
 |:--------|:--------|:---------:|:---------:|:---------:|:---------:|
-|U| Fixed Value | Free stream | No slip | Fixed Value | Fixed Value |
+|U| Fixed Value | Free stream | No slip | No slip | No slip |
 |p| Free stream | Free stream | Fixed value | Fixed value | Fixed Value |
 
-
-For the boundaries, one has to adapt the conditions depending on the edge. Note that the wing profile is a solid boundary and has to be considered as a domain edge. <br/>
-For the inlet and outlet, we can set a so-called "free stream" condition for both pressure and temperature. It is especially appropriate ti the fluid flowing in and out
-at a constant $U_{inf}$ velocity. <br/>
-For the profile surface, we use classical boundary conditions for wall-bounded flows. By definiton, velocity has to present a no-slip condition on a solid surface,
-i.e. should equal 0. It is obviously not the case of pressure which cannot fall to 0 at the boundary. Instead, a zero-gradient condition ... the continuity of pressure.
-Remark: in a RANS turbulence model we must give boundary conditions for the turbulent variables ($k$, $\omega$, $\nu_T$). <br/>
+For the inlet and outlet the fluid is supposed to flow in and out at a constant $U_{\infty}$ velocity. Fixing this value at the inlet and let the fluid flow "freely" at the outlet would comply with this configuration. Note that this free stream condition is represented mathematically by a zero gradient condition at the boundaries (Neumann condition). <br/>
+<br/>
+For the profile edges, we use classical boundary conditions for wall-bounded flows. By definiton, velocity has to present a no-slip condition on a solid surface,
+i.e. should equal 0. It is obviously not the case of pressure which cannot fall to 0 at the boundary. Instead, a zero-gradient condition ensures the continuity of pressure. <br/>
+<br/> Remark: in a RANS turbulence model we must give boundary conditions for the turbulent variables ($k$, $\omega$, $\nu_T$). <br/>
 More information about RANS modelling and the turbulent variables can be found here.
 
 ## Postprocessing the simulation
