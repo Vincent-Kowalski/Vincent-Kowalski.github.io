@@ -113,7 +113,7 @@ For the inlet and outlet the fluid is supposed to flow in and out at a constant 
 For the profile edges, we use classical boundary conditions for wall-bounded flows. By definiton, velocity has to present a no-slip condition on a solid surface,
 i.e. should equal 0. It is obviously not the case of pressure which cannot fall to 0 at the boundary. Instead, a zero-gradient condition ensures the continuity of pressure. <br/>
 <br/> Remark: in a RANS turbulence model we must give boundary conditions for the turbulent variables ($k$, $\omega$, $\nu_T$). <br/>
-More information about RANS modelling and the turbulent variables can be found here.
+More information about RANS modelling and the turbulent variables can be found [here](https://www.cfd-online.com/Wiki/RANS-based_turbulence_models).
 
 ## Postprocessing the simulation
 Once the steady-state of our simulations would be reached, the $C_L$ and $C_D$ coefficients would be calculable, only based on the pressure distribution around the wing profile.
