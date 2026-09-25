@@ -97,10 +97,10 @@ To reduce the resolution of each time step to a algebraic system of equations, o
 These are repectively called initial and boundary conditions. <br/>
 At time 0, the pressure and velocity fields can be taken as homogeneous in the whole domain. In particular, the chosen values shouldn't be too far from the calculated ones, otherwise it's going to be harder (or even impossible) to converge to the solution. <br/>
 <br/> Concerning the boundaries, the wing profile is in fact placed in an incoming air current that flows from left to right. The top and bottom of the simumation domain are considered as solid impervious walls as well as the airfoil edges. <br/>
-That being said, the boundary conditions can be summarized in this chart:
-
+That being said, the boundary conditions can be summarized in this chart: <br/>
+<br/>
 | | Inlet | Outlet | Profile edges | Top | Bottom |
-|:--------|:--------|:---------:|:---------:|:---------:|:---------:|
+|:--------:|:--------|:---------:|:---------:|:---------:|:---------:|
 |U| Fixed Value | Free stream | No slip | No slip | No slip |
 |p| Free stream | Free stream | Fixed value | Fixed value | Fixed Value |
 
