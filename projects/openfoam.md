@@ -4,8 +4,6 @@ title:
 permalink: /projects/openfoam/
 ---
 
-# Parameter study of the incidence angle on a NACA wing profile (OpenFOAM)
-
 ## Context
 During my Erasmus study trip at the Karlsruher Insitut für Technology in Germany I attended a very qualitative course given by Dr.-Ing. Stroh on OpenFOAM CFD. This was my first ever contact with CFD and it went very smoothly since Dr Stroh was not only a very good technician but also a remarquable teacher. <br/>
 <br/>
@@ -60,7 +58,7 @@ The NACA (National Advisory Committee for Aeronautics) wing profiles have been d
 ## Solver choice
 In OpenFOAM, several solvers are available. It is an algorithm that solve the coupling between pressure and velocity in the Navier-Stokes system equations.
 The choice of the solver is determining: one won't end up with the same results with different solvers. Its choice always depends on the configuration. <br/>
-An important feature of our configuration is that, eventually, the fluid is going to reach a fully turbulent stationnary state with air flowing smoothly around the profile.
+<br/> An important feature of our configuration is that, eventually, the fluid is going to reach a fully turbulent stationnary state with air flowing smoothly around the profile.
 In other words the variation in the velocity and pressure profiles from one time step to another is going to be neglectable at some point. <br/>
 In these situations one typcally uses a steady-state solver. The main advantage is that the modeller doesn't have to tell the software when to stop ("How much time steps should
 the simulation last?") but when field variations are assumed to be neglictable ("Is a $10^{-4}$, $10^{-6}$ ... relative variation the sign that steady state is reached?"). <br/>
