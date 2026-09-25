@@ -1,6 +1,6 @@
 ---
 layout: page
-title:
+title: Parameter study of a NACA wing profile
 permalink: /projects/openfoam/
 ---
 
