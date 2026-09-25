@@ -39,6 +39,10 @@ with
 - $\rho$ the density of the fluid (kg/$m^3$)
 - $U_{inf}$ the speed of the incoming fluid (m/s)
 - $S_{ref}$ the surface area of the wing (m²)
+
+
+
+
 <br/>
 As one can see, their are very similar. Only the aerodynamical coefficients differentiate them. This is why the knowledge of the above menionned polar curve
 is a prerequisite for determining the performances of the aircraft.
