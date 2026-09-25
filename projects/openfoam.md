@@ -21,7 +21,7 @@ The objective was to determine numerically the aerodynamic coefficients (lift an
 <br/>
 <figure> 
 <div style="text-align: center;">
-<img src="/Images/Cl_Cd.png" width="400" align="center" alt="Polar curve example"> \
+<img src="/Images/Cl_Cd.png" width="400" align="center" alt="Polar curve example" title="Polar curve example">
 	<figcaption> Polar curve example </figcaption>
 </div>
 </figure>
