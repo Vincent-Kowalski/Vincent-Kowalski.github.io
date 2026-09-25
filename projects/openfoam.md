@@ -21,7 +21,7 @@ One of the "mini-project" was the parameter study of incidence angle $\alpha$ on
 For the purpose of flying an airplane, a wing profile developps both a vertical and a horizontal force component, respectively called lift and drag forces. The intricated phenomena that give rise to these forces are compliated but they can be determined by the flow characteristics.
 The objective was to determine numerically the aerodynamic coefficients (lift and drag) based on the recorded pressure drop as a function of $\alpha$. We then end up with the polar curve representing the variation of $C_l$ with resepct to $C_d$. The incidence angle varies implicitly along the graph. <br/>
 <br/>
-![Parent Directory Image](/Images/Cl_Cd.png) <br/>
+<img src="/Images/Cl_Cd.png" width="400">
 <br/>
 The flow is considered to be incompressible since we are interested in the regions of the flow that are relatively close to the wing edge.
 
