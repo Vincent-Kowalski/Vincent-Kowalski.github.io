@@ -105,6 +105,8 @@ That being said, the boundary conditions can be summarized in this chart: <br/>
 |U| Fixed Value | Free stream | No slip | No slip | No slip |
 |p| Free stream | Free stream | Fixed value | Fixed value | Fixed Value |
 
+<br/>
+<br/>
 For the inlet and outlet the fluid is supposed to flow in and out at a constant $U_{\infty}$ velocity. Fixing this value at the inlet and let the fluid flow "freely" at the outlet would comply with this configuration. Note that this free stream condition is represented mathematically by a zero gradient condition at the boundaries (Neumann condition). <br/>
 <br/>
 For the profile edges, we use classical boundary conditions for wall-bounded flows. By definiton, velocity has to present a no-slip condition on a solid surface,
