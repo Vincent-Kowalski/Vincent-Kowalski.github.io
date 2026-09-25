@@ -72,7 +72,9 @@ with :
 - $\rho$ : the volumetric mass of the fluid (kg/$m^3$)
 - $\mu$ : the dynamic viscosity of of the fluid (kg/m/s)
 - c : the chord of the wing profile (m)
-- $U_{inf}$ : the velocity of the incident flow (m/s) <br/>
+- $U_{inf}$ : the velocity of the incident flow (m/s)
+
+
 <br/>
 Although we know the values $\rho_{air}$, $\mu_{air}$, etc. it doesn't matter since others can reproduce my simulation with the same Reynolds number. <br/>
 The chosen $Re$ has to be coherent with the physical parameters of air and high enough to allow a fully turbulent flow. $Re = 10^6$ meets those conditions.
