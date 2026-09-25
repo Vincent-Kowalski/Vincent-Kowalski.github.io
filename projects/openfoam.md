@@ -46,7 +46,6 @@ with
 <br/>
 As one can see, their are very similar. Only the aerodynamical coefficients differentiate them. This is why the knowledge of the above menionned polar curve
 is a prerequisite for determining the performances of the aircraft.
-+ calcul des coefficients
 
 ## Quick overview of NACA profiles
 In this study, we observe the performances of the 0010 NACA airfoil. <br/>
@@ -61,7 +60,7 @@ An important feature of our configuration is that, eventually, the fluid is goin
 In other words the variation in the velocity and pressure profiles from one time step to another is going to be neglectable at some point. <br/>
 In these situations one typcally uses a steady-state solver. The main advantage is that the modeller doesn't have to tell the software when to stop ("How much time steps should
 the simulation last?") but when field variations are assumed to be neglictable ("Is a $10^{-4}$, $10^{-6}$ ... relative variation the sign that steady state is reached?"). <br/>
-One can also spot a non-converging simulation more effectively instead of desperatly trying to run it with a higher number of time steps. <br/> 
+<br/> One can also spot a non-converging simulation more effectively instead of desperatly trying to run it with a higher number of time steps. <br/> 
 In an incompressible case like this one, we can use the well-known simpleFOAM solver.
 
 ## Fluid characteristics determination
@@ -91,6 +90,8 @@ To reduce the resolution of each time step to a algebraic system of equations, o
 - on the entire domain at the first time step
 - on the edge of the domain at any time step <br/>
 <br/>
+
+
 These are repectively called initial and boundary conditions. <br/>
 At time 0, the pressure and velocity fields can be taken as homogeneous in the whole domain. In particular, the chosen values shouldn't be too far from the calculated ones, otherwise
 it's going to be harder (or even impossible) to converge to the solution. <br/>
