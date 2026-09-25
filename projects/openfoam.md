@@ -90,10 +90,10 @@ More information on the $k-\omega-SST$ model can be found [here](https://www.cfd
 ## Initial and boundary conditions
 To reduce the resolution of each time step to a algebraic system of equations, one necessarly needs the following values of the researched fields (v and p):
 - on the entire domain at the first time step
-- on the edge of the domain at any time step <br/>
+- on the edge of the domain at any time step
+
+
 <br/>
-
-
 These are repectively called initial and boundary conditions. <br/>
 At time 0, the pressure and velocity fields can be taken as homogeneous in the whole domain. In particular, the chosen values shouldn't be too far from the calculated ones, otherwise
 it's going to be harder (or even impossible) to converge to the solution. <br/>
