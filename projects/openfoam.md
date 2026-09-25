@@ -99,6 +99,7 @@ At time 0, the pressure and velocity fields can be taken as homogeneous in the w
 <br/> Concerning the boundaries, the wing profile is in fact placed in an incoming air current that flows from left to right. The top and bottom of the simumation domain are considered as solid impervious walls as well as the airfoil edges. <br/>
 That being said, the boundary conditions can be summarized in this chart: <br/>
 <br/>
+
 | | Inlet | Outlet | Profile edges | Top | Bottom |
 |:--------:|:--------|:---------:|:---------:|:---------:|:---------:|
 |U| Fixed Value | Free stream | No slip | No slip | No slip |
